@@ -1,5 +1,6 @@
 package com.axedgaming.endersdelight;
 
+import com.axedgaming.endersdelight.effect.ModEffects;
 import com.axedgaming.endersdelight.item.ModItems;
 import com.mojang.logging.LogUtils;
 import net.minecraft.world.level.block.Block;
@@ -34,6 +35,7 @@ public class EndersDelight
         IEventBus eventBus = FMLJavaModLoadingContext.get().getModEventBus();
         eventBus.addListener(this::setup);
 
+        ModEffects.register(eventBus);
         ModItems.register(eventBus);
 
         // Register ourselves for server and other game events we are interested in
