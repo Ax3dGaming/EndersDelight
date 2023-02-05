@@ -3,7 +3,6 @@ package com.axedgaming.endersdelight.effect;
 import com.axedgaming.endersdelight.EndersDelight;
 import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.effect.MobEffectCategory;
-import net.minecraft.world.effect.MobEffects;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
@@ -14,7 +13,7 @@ public class ModEffects {
             = DeferredRegister.create(ForgeRegistries.MOB_EFFECTS, EndersDelight.MODID);
 
     public static final RegistryObject<MobEffect> PHASING = MOB_EFFECTS.register("phasing",
-            () -> new PhasingEffect(MobEffectCategory.HARMFUL, 3124687));
+            () -> new PhasingEffect(MobEffectCategory.BENEFICIAL, 3124687));
 
     public static void register(IEventBus eventBus) {
         MOB_EFFECTS.register(eventBus);

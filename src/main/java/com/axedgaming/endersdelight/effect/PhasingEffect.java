@@ -32,8 +32,6 @@ public class PhasingEffect extends MobEffect {
         if (pLivingEntity.isInWaterOrBubble()) {
            pLivingEntity.hurt(ModDamageSource.WATER, 1);
         }
-
-        super.applyEffectTick(pLivingEntity, pAmplifier);
     }
 
     public PhasingEffect(MobEffectCategory mobEffectCategory, int color) {
@@ -42,6 +40,6 @@ public class PhasingEffect extends MobEffect {
 
     @Override
     public boolean isDurationEffectTick(int pDuration, int pAmplifier) {
-        return true;
+        return pDuration % 80 == 0;
     }
 }
