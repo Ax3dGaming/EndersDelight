@@ -1,5 +1,6 @@
 package com.axedgaming.endersdelight;
 
+import com.axedgaming.endersdelight.damageSource.ModDamageSource;
 import com.axedgaming.endersdelight.effect.ModEffects;
 import com.axedgaming.endersdelight.item.ModItems;
 import com.mojang.logging.LogUtils;

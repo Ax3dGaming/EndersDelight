@@ -15,5 +15,6 @@
   "item.endersdelight.strange_eclair": "Strange Eclair",
   "item.endersdelight.uncanny_cookies": "Uncanny Cookies",
   "item.endersdelight.stuffed_shulker": "Stuffed Shulker",
-  "effect.endersdelight.phasing": "Ender Phasing"
+  "effect.endersdelight.phasing": "Ender Phasing",
+  "death.attack.wasWatered": "%1$s was watered"
 }
