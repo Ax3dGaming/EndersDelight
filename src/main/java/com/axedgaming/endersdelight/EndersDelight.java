@@ -1,5 +1,6 @@
 package com.axedgaming.endersdelight;
 
+import com.axedgaming.endersdelight.block.ModBlocks;
 import com.axedgaming.endersdelight.damageSource.ModDamageSource;
 import com.axedgaming.endersdelight.effect.ModEffects;
 import com.axedgaming.endersdelight.item.ModItems;
@@ -38,6 +39,8 @@ public class EndersDelight
 
         ModEffects.register(eventBus);
         ModItems.register(eventBus);
+
+        ModBlocks.register(eventBus);
 
         // Register ourselves for server and other game events we are interested in
         MinecraftForge.EVENT_BUS.register(this);

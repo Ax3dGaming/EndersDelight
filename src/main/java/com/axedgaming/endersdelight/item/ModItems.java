@@ -1,7 +1,6 @@
 package com.axedgaming.endersdelight.item;
 
 import com.axedgaming.endersdelight.EndersDelight;
-import net.minecraft.client.renderer.item.ItemProperties;
 import net.minecraft.world.item.Item;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
@@ -54,11 +53,17 @@ public class ModItems {
     public static final RegistryObject<Item> UNCANNY_COOKIES = ITEMS.register("uncanny_cookies",
             () -> new Item(new Item.Properties().food(ModFoods.UNCANNY_COOKIES).tab(ModCreativeTab.ENDERS_DELIGHT_TAB)));
 
-    public static final RegistryObject<Item> STUFFED_SHULKER = ITEMS.register("stuffed_shulker",
+    public static final RegistryObject<Item> STUFFED_SHULKER_BOWL = ITEMS.register("stuffed_shulker_bowl",
             () -> new Item(new Item.Properties().food(ModFoods.STUFFED_SHULKER).tab(ModCreativeTab.ENDERS_DELIGHT_TAB)));
 
     public static final RegistryObject<Item> CHORUS_JUICE = ITEMS.register("chorus_juice",
             () -> new ChorusJuice(new Item.Properties().tab(ModCreativeTab.ENDERS_DELIGHT_TAB).food(ModFoods.CHORUS_JUICE)));
+
+    public static final RegistryObject<Item> CHORUS_PIE = ITEMS.register("chorus_pie",
+            () -> new Item(new Item.Properties().tab(ModCreativeTab.ENDERS_DELIGHT_TAB)));
+
+    public static final RegistryObject<Item> STUFFED_SHULKER = ITEMS.register("stuffed_shulker",
+            () -> new Item(new Item.Properties().tab(ModCreativeTab.ENDERS_DELIGHT_TAB)));
 
 
     public static void register(IEventBus eventBus) {

@@ -1,0 +1,16 @@
+{
+  "type": "farmersdelight:cutting",
+  "ingredients": [
+    {
+      "item": "minecraft:ender_pearl"
+    }
+  ],
+  "tool": {
+    "item": "minecraft:cobblestone"
+  },
+  "result": [
+    {
+      "item": "endersdelight:ender_shard"
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "type": "farmersdelight:cutting",
+  "ingredients": [
+    {
+      "item": "endersdelight:enderman_sight"
+    }
+  ],
+  "tool": {
+    "item": "minecraft:cobblestone"
+  },
+  "result": [
+    {
+      "item": "endersdelight:sight_fragment"
+    }
+  ]
+}

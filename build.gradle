@@ -109,6 +109,11 @@ sourceSets.main.resources { srcDir 'src/generated/resources' }
 
 repositories {
     maven {
+        // JEI
+        name = "Progwml6 maven"
+        url = "https://dvs1.progwml6.com/files/maven/"
+    }
+    maven {
         url = "https://www.cursemaven.com"
         content {
             includeGroup "curse.maven"
@@ -119,6 +124,10 @@ repositories {
 dependencies {
     minecraft 'net.minecraftforge:forge:1.18.2-40.1.46'
     implementation fg.deobf("curse.maven:farmers-d-398521:${farmers_delight_version}")
+
+    compileOnly fg.deobf("mezz.jei:jei-${mc_version}:${jei_version}:api")
+    runtimeOnly fg.deobf("mezz.jei:jei-${mc_version}:${jei_version}")
+
 }
 
 jar {

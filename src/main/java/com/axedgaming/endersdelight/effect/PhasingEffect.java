@@ -20,7 +20,7 @@ public class PhasingEffect extends MobEffect {
         y = Math.floor(y) + Mth.nextInt(new Random(), 0, 2);
         z = Math.floor(z) + Mth.nextInt(new Random(), -5, 5);
 
-        if (!pLivingEntity.isInWaterOrBubble() && pLivingEntity.hurtTime >= 5 && !pLivingEntity.level.isRaining()) {
+        if (!pLivingEntity.isInWaterOrBubble() && pLivingEntity.hurtTime <= 10000) {
             if (pLivingEntity.level.isEmptyBlock(new BlockPos(x, y, z)) && pLivingEntity.level.isEmptyBlock(new BlockPos(x, y + 1, z))
                     && pLivingEntity.level.getBlockState(new BlockPos(x, y - 1, z)).canOcclude()) {
                 pLivingEntity.teleportTo(x,y,z);
