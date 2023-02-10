@@ -4,6 +4,7 @@ import com.axedgaming.endersdelight.block.ModBlocks;
 import com.axedgaming.endersdelight.damageSource.ModDamageSource;
 import com.axedgaming.endersdelight.effect.ModEffects;
 import com.axedgaming.endersdelight.item.ModItems;
+import com.axedgaming.endersdelight.registry.EDBlockEntityTypes;
 import com.mojang.logging.LogUtils;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
@@ -19,6 +20,8 @@ import net.minecraftforge.fml.event.lifecycle.InterModProcessEvent;
 import net.minecraftforge.event.server.ServerStartingEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import org.slf4j.Logger;
+import vectorwing.farmersdelight.client.ClientSetup;
+import vectorwing.farmersdelight.common.registry.ModBlockEntityTypes;
 
 import java.util.stream.Collectors;
 
@@ -30,6 +33,7 @@ public class EndersDelight
 
     public EndersDelight()
     {
+        final IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
         FMLJavaModLoadingContext.get().getModEventBus().addListener(this::setup);
         FMLJavaModLoadingContext.get().getModEventBus().addListener(this::enqueueIMC);
         FMLJavaModLoadingContext.get().getModEventBus().addListener(this::processIMC);
@@ -41,6 +45,7 @@ public class EndersDelight
         ModItems.register(eventBus);
 
         ModBlocks.register(eventBus);
+        EDBlockEntityTypes.TILES.register(modEventBus);
 
         // Register ourselves for server and other game events we are interested in
         MinecraftForge.EVENT_BUS.register(this);

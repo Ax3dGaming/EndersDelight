@@ -1,0 +1,17 @@
+{
+  "type": "farmersdelight:cooking",
+  "recipe_book_tab": "meals",
+  "ingredients": [
+    {
+      "item": "endersdelight:mite_crust"
+    },
+    {
+      "item": "minecraft:sugar"
+    }
+  ],
+  "result": {
+    "item": "endersdelight:uncanny_cookies"
+  },
+  "experience": 1.0,
+  "cookingtime": 200
+}

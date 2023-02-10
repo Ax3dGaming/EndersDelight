@@ -1,11 +1,17 @@
 package com.axedgaming.endersdelight.item;
 
 import com.axedgaming.endersdelight.EndersDelight;
+import com.axedgaming.endersdelight.block.ModBlocks;
+import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.level.block.Block;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
+import vectorwing.farmersdelight.common.FoodValues;
+
+import static vectorwing.farmersdelight.common.registry.ModItems.basicItem;
 
 public class ModItems {
     public static final DeferredRegister<Item> ITEMS =
@@ -33,7 +39,7 @@ public class ModItems {
             () -> new Item(new Item.Properties().tab(ModCreativeTab.ENDERS_DELIGHT_TAB)));
 
     public static final RegistryObject<Item> CRISPY_SKEWER = ITEMS.register("crispy_skewer",
-            () -> new Item(new Item.Properties().food(ModFoods.CRISPY_SKEWER).tab(ModCreativeTab.ENDERS_DELIGHT_TAB)));
+            () -> new Item(new Item.Properties().food(ModFoods.FINGER).tab(ModCreativeTab.ENDERS_DELIGHT_TAB)));
 
     public static final RegistryObject<Item> CRAWLING_SANDWICH = ITEMS.register("crawling_sandwich",
             () -> new Item(new Item.Properties().food(ModFoods.CRAWLING_SANDWICH).tab(ModCreativeTab.ENDERS_DELIGHT_TAB)));
@@ -45,7 +51,7 @@ public class ModItems {
             () -> new Item(new Item.Properties().food(ModFoods.CHORUS_STEW).tab(ModCreativeTab.ENDERS_DELIGHT_TAB)));
 
     public static final RegistryObject<Item> ENDER_PAELLA = ITEMS.register("ender_paella",
-            () -> new Item(new Item.Properties().food(ModFoods.ENDER_PAELLA).tab(ModCreativeTab.ENDERS_DELIGHT_TAB)));
+            () -> new Item(new Item.Properties().food(ModFoods.MEAL).tab(ModCreativeTab.ENDERS_DELIGHT_TAB)));
 
     public static final RegistryObject<Item> STRANGE_ECLAIR = ITEMS.register("strange_eclair",
             () -> new Item(new Item.Properties().food(ModFoods.STRANGE_ECLAIR).tab(ModCreativeTab.ENDERS_DELIGHT_TAB)));
@@ -57,14 +63,31 @@ public class ModItems {
             () -> new Item(new Item.Properties().food(ModFoods.STUFFED_SHULKER).tab(ModCreativeTab.ENDERS_DELIGHT_TAB)));
 
     public static final RegistryObject<Item> CHORUS_JUICE = ITEMS.register("chorus_juice",
-            () -> new ChorusJuice(new Item.Properties().tab(ModCreativeTab.ENDERS_DELIGHT_TAB).food(ModFoods.CHORUS_JUICE)));
+            () -> new ChorusJuice(new Item.Properties().tab(ModCreativeTab.ENDERS_DELIGHT_TAB).food(ModFoods.FINGER)));
 
-    public static final RegistryObject<Item> CHORUS_PIE = ITEMS.register("chorus_pie",
-            () -> new Item(new Item.Properties().tab(ModCreativeTab.ENDERS_DELIGHT_TAB)));
+    public static final RegistryObject<Item> CHORUS_PIE_SLICE = ITEMS.register("chorus_pie_slice",
+            () -> new Item(new Item.Properties().tab(ModCreativeTab.ENDERS_DELIGHT_TAB).food(FoodValues.PIE_SLICE)));
 
-    public static final RegistryObject<Item> STUFFED_SHULKER = ITEMS.register("stuffed_shulker",
-            () -> new Item(new Item.Properties().tab(ModCreativeTab.ENDERS_DELIGHT_TAB)));
+    public static final RegistryObject<Item> PEARL_PASTA = ITEMS.register("pearl_pasta",
+            () -> new Item(new Item.Properties().tab(ModCreativeTab.ENDERS_DELIGHT_TAB).food(ModFoods.MEAL)));
 
+
+    public static final RegistryObject<Item> CHORUS_PIE;
+    public static final RegistryObject<Item> STUFFED_SHULKER;
+    public static final RegistryObject<Item> ENDSTONE_STOVE;
+
+    static {
+        ENDSTONE_STOVE = ITEMS.register("endstone_stove", () -> {
+            return new BlockItem((Block) ModBlocks.ENDSTONE_STOVE.get(), basicItem().tab(ModCreativeTab.ENDERS_DELIGHT_TAB));
+        });
+        CHORUS_PIE = ITEMS.register("chorus_pie", () -> {
+            return new BlockItem((Block) ModBlocks.CHORUS_PIE.get(), basicItem().stacksTo(1).tab(ModCreativeTab.ENDERS_DELIGHT_TAB));
+        });
+
+        STUFFED_SHULKER = ITEMS.register("stuffed_shulker", () -> {
+            return new BlockItem((Block) ModBlocks.STUFFED_SHULKER_BLOCK.get(), basicItem().stacksTo(1).tab(ModCreativeTab.ENDERS_DELIGHT_TAB));
+        });
+    }
 
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);

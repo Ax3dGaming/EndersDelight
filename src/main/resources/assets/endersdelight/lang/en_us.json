@@ -14,8 +14,13 @@
   "item.endersdelight.ender_paella": "Ender Paella",
   "item.endersdelight.strange_eclair": "Strange Eclair",
   "item.endersdelight.uncanny_cookies": "Uncanny Cookies",
-  "item.endersdelight.stuffed_shulker": "Stuffed Shulker",
+  "item.endersdelight.stuffed_shulker_bowl": "Bowl Of Stuffed Shulker",
   "item.endersdelight.chorus_juice": "Chorus Juice",
+  "item.endersdelight.chorus_pie_slice": "Chorus Pie Slice",
+  "item.endersdelight.pearl_pasta": "Pearl Pasta",
+  "block.endersdelight.chorus_pie": "Chorus Pie",
+  "block.endersdelight.endstone_stove": "Endstone Stove",
+  "block.endersdelight.stuffed_shulker_block": "Stuffed Shulker",
   "effect.endersdelight.phasing": "Ender Phasing",
   "death.attack.wasWatered": "%1$s was watered"
 }

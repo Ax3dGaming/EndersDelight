@@ -6,7 +6,7 @@
     }
   ],
   "tool": {
-    "item": "minecraft:cobblestone"
+    "tag": "forge:cobblestone"
   },
   "result": [
     {

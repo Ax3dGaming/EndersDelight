@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "minecraft:chorus_fruit"
+    },
+    {
+      "item": "minecraft:chorus_flower"
+    },
+    {
+      "item": "endersdelight:shulker_bowl"
+    }
+  ],
+  "result": {
+    "item": "endersdelight:chorus_stew",
+    "count": 1
+  }
+}
