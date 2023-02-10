@@ -10,6 +10,7 @@ public class ModFoods {
     public static final FoodProperties FINGER = (new FoodProperties.Builder().nutrition(2).saturationMod(0.F)).build();
     public static final FoodProperties MEAL = (new FoodProperties.Builder().nutrition(4).saturationMod(0.4F)).build();
     public static final FoodProperties FEAST = (new FoodProperties.Builder().nutrition(8).saturationMod(0.8F)).build();
+    public static final FoodProperties ENDERMITE_STEW = (new FoodProperties.Builder().nutrition(4).saturationMod(0.4F).effect(new MobEffectInstance(MobEffects.DAMAGE_BOOST, 600, 0), 1F)).build();
     public static final FoodProperties CRAWLING_SANDWICH = (new FoodProperties.Builder().nutrition(3).saturationMod(0.2F).effect(new MobEffectInstance(MobEffects.DAMAGE_RESISTANCE, 1800, 0), 1F).effect(new MobEffectInstance(MobEffects.CONFUSION, 400, 0), 1F)).build();
     public static final FoodProperties TWISTED_CEREAL = (new FoodProperties.Builder().nutrition(4).saturationMod(0.5F)).effect(() -> new MobEffectInstance(ModEffects.PHASING.get(), 1800, 0), 1F).build();
     public static final FoodProperties CHORUS_STEW = (new FoodProperties.Builder()).nutrition(4).saturationMod(0.5F).effect(() -> new MobEffectInstance(ModEffects.PHASING.get(), 200, 0), 1F).build();

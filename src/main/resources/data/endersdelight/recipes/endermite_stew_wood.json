@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "tag": "endersdelight:enderman_loot"
+    },
+    {
+      "item": "endersdelight:mite_crust"
+    },
+    {
+      "item": "minecraft:bowl"
+    }
+  ],
+  "result": {
+    "item": "endersdelight:endermite_stew_wood",
+    "count": 1
+  }
+}

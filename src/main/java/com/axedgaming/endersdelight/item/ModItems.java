@@ -50,6 +50,9 @@ public class ModItems {
     public static final RegistryObject<Item> CHORUS_STEW = ITEMS.register("chorus_stew",
             () -> new Item(new Item.Properties().food(ModFoods.CHORUS_STEW).tab(ModCreativeTab.ENDERS_DELIGHT_TAB)));
 
+    public static final RegistryObject<Item> CHORUS_STEW_WOOD = ITEMS.register("chorus_stew_wood",
+            () -> new Item(new Item.Properties().food(ModFoods.CHORUS_STEW).tab(ModCreativeTab.ENDERS_DELIGHT_TAB)));
+
     public static final RegistryObject<Item> ENDER_PAELLA = ITEMS.register("ender_paella",
             () -> new Item(new Item.Properties().food(ModFoods.MEAL).tab(ModCreativeTab.ENDERS_DELIGHT_TAB)));
 
@@ -70,6 +73,15 @@ public class ModItems {
 
     public static final RegistryObject<Item> PEARL_PASTA = ITEMS.register("pearl_pasta",
             () -> new Item(new Item.Properties().tab(ModCreativeTab.ENDERS_DELIGHT_TAB).food(ModFoods.MEAL)));
+
+    public static final RegistryObject<Item> PEARL_PASTA_WOOD = ITEMS.register("pearl_pasta_wood",
+            () -> new Item(new Item.Properties().tab(ModCreativeTab.ENDERS_DELIGHT_TAB).food(ModFoods.MEAL)));
+
+    public static final RegistryObject<Item> ENDERMITE_STEW = ITEMS.register("endermite_stew",
+            () -> new Item(new Item.Properties().tab(ModCreativeTab.ENDERS_DELIGHT_TAB).food(ModFoods.ENDERMITE_STEW)));
+
+    public static final RegistryObject<Item> ENDERMITE_STEW_WOOD = ITEMS.register("endermite_stew_wood",
+            () -> new Item(new Item.Properties().tab(ModCreativeTab.ENDERS_DELIGHT_TAB).food(ModFoods.ENDERMITE_STEW)));
 
 
     public static final RegistryObject<Item> CHORUS_PIE;
