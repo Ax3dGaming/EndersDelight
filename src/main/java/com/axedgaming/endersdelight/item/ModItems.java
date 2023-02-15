@@ -113,7 +113,7 @@ public class ModItems {
 
     static {
         PEARL_PASTA_WOOD = ITEMS.register("pearl_pasta_wood", () -> {
-            return new ConsumableItem(bowlFoodItem(ModFoods.MEAL).tab(ModCreativeTab.ENDERS_DELIGHT_TAB), true);
+            return new ConsumableItem(bowlFoodItem(ModFoods.PEARL_PASTA).tab(ModCreativeTab.ENDERS_DELIGHT_TAB), true);
         });
     }
 
@@ -140,7 +140,7 @@ public class ModItems {
 
     static {
         PEARL_PASTA = ITEMS.register("pearl_pasta", () -> {
-            return new ConsumableItem(shulkerBowlFoodItem(ModFoods.MEAL).tab(ModCreativeTab.ENDERS_DELIGHT_TAB), true);
+            return new ConsumableItem(shulkerBowlFoodItem(ModFoods.PEARL_PASTA).tab(ModCreativeTab.ENDERS_DELIGHT_TAB), true);
         });
     }
 
