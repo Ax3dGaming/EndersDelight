@@ -1,4 +1,4 @@
-package com.axedgaming.endersdelight.item;
+package com.axedgaming.endersdelight.item.food;
 
 import net.minecraft.world.item.HoneyBottleItem;
 

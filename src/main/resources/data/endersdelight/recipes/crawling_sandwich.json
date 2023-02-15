@@ -1,6 +1,5 @@
 {
-  "type": "farmersdelight:cooking",
-  "recipe_book_tab": "meals",
+  "type": "minecraft:crafting_shapeless",
   "ingredients": [
     {
       "tag": "endersdelight:shulker_loot"
@@ -16,8 +15,7 @@
     }
   ],
   "result": {
-    "item": "endersdelight:crawling_sandwich"
-  },
-  "experience": 1.0,
-  "cookingtime": 200
+    "item": "endersdelight:stuffed_shulker",
+    "count": 1
+  }
 }

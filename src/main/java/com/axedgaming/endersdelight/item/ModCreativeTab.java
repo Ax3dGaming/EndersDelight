@@ -7,7 +7,7 @@ public class ModCreativeTab {
     public static final CreativeModeTab ENDERS_DELIGHT_TAB = new CreativeModeTab("endersdelighttab") {
         @Override
         public ItemStack makeIcon() {
-            return new ItemStack(ModItems.SHULKER_BOWL.get());
+            return new ItemStack(ModItems.ENDSTONE_STOVE.get());
         }
     };
 }

@@ -1,6 +1,5 @@
 {
-  "type": "farmersdelight:cooking",
-  "recipe_book_tab": "meals",
+  "type": "minecraft:crafting_shapeless",
   "ingredients": [
     {
       "item": "minecraft:ender_eye"
@@ -13,8 +12,7 @@
     }
   ],
   "result": {
-    "item": "endersdelight:strange_eclair"
-  },
-  "experience": 1.0,
-  "cookingtime": 200
+    "item": "endersdelight:strange_elcair",
+    "count": 1
+  }
 }

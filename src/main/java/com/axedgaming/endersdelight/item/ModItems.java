@@ -2,6 +2,8 @@ package com.axedgaming.endersdelight.item;
 
 import com.axedgaming.endersdelight.EndersDelight;
 import com.axedgaming.endersdelight.block.ModBlocks;
+import com.axedgaming.endersdelight.item.food.ChorusJuice;
+import com.axedgaming.endersdelight.item.food.Stew;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
@@ -21,7 +23,7 @@ public class ModItems {
             () -> new Item(new Item.Properties().tab(ModCreativeTab.ENDERS_DELIGHT_TAB)));
 
     public static final RegistryObject<Item> MITE_CRUST = ITEMS.register("mite_crust",
-            () -> new Item(new Item.Properties().tab(ModCreativeTab.ENDERS_DELIGHT_TAB)));
+            () -> new Item(new Item.Properties().tab(ModCreativeTab.ENDERS_DELIGHT_TAB).food(ModFoods.DIET)));
 
     public static final RegistryObject<Item> ENDERMAN_SIGHT = ITEMS.register("enderman_sight",
             () -> new Item(new Item.Properties().tab(ModCreativeTab.ENDERS_DELIGHT_TAB)));
@@ -33,10 +35,10 @@ public class ModItems {
             () -> new Item(new Item.Properties().tab(ModCreativeTab.ENDERS_DELIGHT_TAB)));
 
     public static final RegistryObject<Item> SHULKER_MOLLUSK = ITEMS.register("shulker_mollusk",
-            () -> new Item(new Item.Properties().tab(ModCreativeTab.ENDERS_DELIGHT_TAB)));
+            () -> new Item(new Item.Properties().tab(ModCreativeTab.ENDERS_DELIGHT_TAB).food(ModFoods.DIET)));
 
     public static final RegistryObject<Item> SHULKER_FILET = ITEMS.register("shulker_filet",
-            () -> new Item(new Item.Properties().tab(ModCreativeTab.ENDERS_DELIGHT_TAB)));
+            () -> new Item(new Item.Properties().tab(ModCreativeTab.ENDERS_DELIGHT_TAB).food(ModFoods.DIET)));
 
     public static final RegistryObject<Item> CRISPY_SKEWER = ITEMS.register("crispy_skewer",
             () -> new Item(new Item.Properties().food(ModFoods.FINGER).tab(ModCreativeTab.ENDERS_DELIGHT_TAB)));
@@ -48,13 +50,16 @@ public class ModItems {
             () -> new Item(new Item.Properties().food(ModFoods.TWISTED_CEREAL).tab(ModCreativeTab.ENDERS_DELIGHT_TAB)));
 
     public static final RegistryObject<Item> CHORUS_STEW = ITEMS.register("chorus_stew",
-            () -> new Item(new Item.Properties().food(ModFoods.CHORUS_STEW).tab(ModCreativeTab.ENDERS_DELIGHT_TAB)));
+            () -> new Stew(new Item.Properties().food(ModFoods.CHORUS_STEW).tab(ModCreativeTab.ENDERS_DELIGHT_TAB), true));
 
     public static final RegistryObject<Item> CHORUS_STEW_WOOD = ITEMS.register("chorus_stew_wood",
-            () -> new Item(new Item.Properties().food(ModFoods.CHORUS_STEW).tab(ModCreativeTab.ENDERS_DELIGHT_TAB)));
+            () -> new Stew(new Item.Properties().food(ModFoods.CHORUS_STEW).tab(ModCreativeTab.ENDERS_DELIGHT_TAB), true));
 
     public static final RegistryObject<Item> ENDER_PAELLA = ITEMS.register("ender_paella",
-            () -> new Item(new Item.Properties().food(ModFoods.MEAL).tab(ModCreativeTab.ENDERS_DELIGHT_TAB)));
+            () -> new Item(new Item.Properties().food(ModFoods.ENDER_PAELLA).tab(ModCreativeTab.ENDERS_DELIGHT_TAB)));
+
+    public static final RegistryObject<Item> ENDER_PAELLA_WOOD = ITEMS.register("ender_paella_wood",
+            () -> new Item(new Item.Properties().food(ModFoods.ENDER_PAELLA).tab(ModCreativeTab.ENDERS_DELIGHT_TAB)));
 
     public static final RegistryObject<Item> STRANGE_ECLAIR = ITEMS.register("strange_eclair",
             () -> new Item(new Item.Properties().food(ModFoods.STRANGE_ECLAIR).tab(ModCreativeTab.ENDERS_DELIGHT_TAB)));
@@ -78,17 +83,21 @@ public class ModItems {
             () -> new Item(new Item.Properties().tab(ModCreativeTab.ENDERS_DELIGHT_TAB).food(ModFoods.MEAL)));
 
     public static final RegistryObject<Item> ENDERMITE_STEW = ITEMS.register("endermite_stew",
-            () -> new Item(new Item.Properties().tab(ModCreativeTab.ENDERS_DELIGHT_TAB).food(ModFoods.ENDERMITE_STEW)));
+            () -> new Stew(new Item.Properties().tab(ModCreativeTab.ENDERS_DELIGHT_TAB).food(ModFoods.ENDERMITE_STEW),true));
 
     public static final RegistryObject<Item> ENDERMITE_STEW_WOOD = ITEMS.register("endermite_stew_wood",
-            () -> new Item(new Item.Properties().tab(ModCreativeTab.ENDERS_DELIGHT_TAB).food(ModFoods.ENDERMITE_STEW)));
+            () -> new Stew(new Item.Properties().tab(ModCreativeTab.ENDERS_DELIGHT_TAB).food(ModFoods.ENDERMITE_STEW), true));
 
 
     public static final RegistryObject<Item> CHORUS_PIE;
     public static final RegistryObject<Item> STUFFED_SHULKER;
     public static final RegistryObject<Item> ENDSTONE_STOVE;
+    public static final RegistryObject<Item> CHORUS_CRATE;
 
     static {
+        CHORUS_CRATE = ITEMS.register("chorus_crate", () -> {
+            return new BlockItem((Block) ModBlocks.CHORUS_CRATE.get(), basicItem().tab(ModCreativeTab.ENDERS_DELIGHT_TAB));
+        });
         ENDSTONE_STOVE = ITEMS.register("endstone_stove", () -> {
             return new BlockItem((Block) ModBlocks.ENDSTONE_STOVE.get(), basicItem().tab(ModCreativeTab.ENDERS_DELIGHT_TAB));
         });

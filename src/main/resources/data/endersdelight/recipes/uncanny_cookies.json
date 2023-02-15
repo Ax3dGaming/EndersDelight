@@ -1,6 +1,5 @@
 {
-  "type": "farmersdelight:cooking",
-  "recipe_book_tab": "meals",
+  "type": "minecraft:crafting_shapeless",
   "ingredients": [
     {
       "item": "endersdelight:mite_crust"
@@ -10,8 +9,7 @@
     }
   ],
   "result": {
-    "item": "endersdelight:uncanny_cookies"
-  },
-  "experience": 1.0,
-  "cookingtime": 200
+    "item": "endersdelight:uncanny_cookies",
+    "count": 1
+  }
 }

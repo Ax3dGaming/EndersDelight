@@ -1,6 +1,5 @@
 {
-  "type": "farmersdelight:cooking",
-  "recipe_book_tab": "meals",
+  "type": "minecraft:crafting_shapeless",
   "ingredients": [
     {
       "item": "endersdelight:mite_crust"
@@ -13,8 +12,7 @@
     }
   ],
   "result": {
-    "item": "endersdelight:crispy_skewer"
-  },
-  "experience": 1.0,
-  "cookingtime": 200
+    "item": "endersdelight:crispy_skewer",
+    "count": 1
+  }
 }

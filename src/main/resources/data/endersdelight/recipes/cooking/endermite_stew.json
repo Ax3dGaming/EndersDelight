@@ -1,5 +1,6 @@
 {
-  "type": "minecraft:crafting_shapeless",
+  "type": "farmersdelight:cooking",
+  "recipe_book_tab": "meals",
   "ingredients": [
     {
       "tag": "endersdelight:enderman_loot"
@@ -12,7 +13,8 @@
     }
   ],
   "result": {
-    "item": "endersdelight:endermite_stew",
-    "count": 1
-  }
+    "item": "endersdelight:endermite_stew"
+  },
+  "experience": 1.0,
+  "cookingtime": 200
 }

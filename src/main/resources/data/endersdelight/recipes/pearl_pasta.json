@@ -1,6 +1,5 @@
 {
-  "type": "farmersdelight:cooking",
-  "recipe_book_tab": "meals",
+  "type": "minecraft:crafting_shapeless",
   "ingredients": [
     {
       "tag": "endersdelight:enderman_loot"
@@ -16,8 +15,7 @@
     }
   ],
   "result": {
-    "item": "endersdelight:pearl_pasta"
-  },
-  "experience": 1.0,
-  "cookingtime": 200
+    "item": "endersdelight:pearl_pasta",
+    "count": 1
+  }
 }

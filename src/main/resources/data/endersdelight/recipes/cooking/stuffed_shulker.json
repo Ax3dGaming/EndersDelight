@@ -1,14 +1,12 @@
 {
-  "type": "minecraft:crafting_shapeless",
+  "type": "farmersdelight:cooking",
+  "recipe_book_tab": "meals",
   "ingredients": [
     {
       "item": "minecraft:shulker_shell"
     },
     {
       "item": "endersdelight:shulker_mollusk"
-    },
-    {
-      "item": "minecraft:chorus_fruit"
     },
     {
       "item": "minecraft:chorus_fruit"
@@ -21,7 +19,8 @@
     }
   ],
   "result": {
-    "item": "endersdelight:stuffed_shulker",
-    "count": 1
-  }
+    "item": "endersdelight:stuffed_shulker"
+  },
+  "experience": 1.0,
+  "cookingtime": 200
 }
