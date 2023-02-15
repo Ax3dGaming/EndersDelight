@@ -109,7 +109,7 @@ public class StuffedShulkerBlock extends Block {
         ItemStack serving = this.getServingItem(state);
         ItemStack heldStack = player.getItemInHand(hand);
 
-        if (heldStack.is(ModItems.SHULKER_BOWL.get())) {
+        if (heldStack.is(Items.BOWL)) {
             if (servings > 0) {
                 if (!serving.hasContainerItem() || heldStack.sameItem(serving.getContainerItem())) {
                     level.setBlock(pos, state.setValue(getServingsProperty(), servings - 1), 3);
