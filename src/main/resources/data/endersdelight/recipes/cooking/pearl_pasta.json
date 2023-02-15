@@ -3,14 +3,17 @@
   "recipe_book_tab": "meals",
   "ingredients": [
     {
-      "item": "minecraft:chorus_fruit"
+      "tag": "endersdelight:enderman_loot"
     },
     {
-      "item": "minecraft:chorus_flower"
+      "tag": "forge:pasta"
+    },
+    {
+      "item": "endersdelight:chorus_juice"
     }
   ],
   "result": {
-    "item": "endersdelight:chorus_stew"
+    "item": "endersdelight:pearl_pasta"
   },
   "container": {
     "item": "endersdelight:shulker_bowl"

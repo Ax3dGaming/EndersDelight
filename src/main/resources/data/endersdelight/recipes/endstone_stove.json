@@ -2,7 +2,7 @@
   "type": "minecraft:crafting_shaped",
   "pattern": [
     "ooo",
-    "e e",
+    "ede",
     "ese"
   ],
   "key": {
@@ -13,7 +13,10 @@
       "item": "minecraft:end_stone_bricks"
     },
     "s": {
-      "item": "minecraft:soul_campfire"
+      "item": "minecraft:campfire"
+    },
+    "d": {
+      "item": "minecraft:dragon_breath"
     }
   },
   "result": {

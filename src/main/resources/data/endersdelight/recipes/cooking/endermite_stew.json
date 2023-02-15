@@ -7,13 +7,13 @@
     },
     {
       "item": "endersdelight:mite_crust"
-    },
-    {
-      "item": "endersdelight:shulker_bowl"
     }
   ],
   "result": {
     "item": "endersdelight:endermite_stew"
+  },
+  "container": {
+    "item": "endersdelight:shulker_bowl"
   },
   "experience": 1.0,
   "cookingtime": 200

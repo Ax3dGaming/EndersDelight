@@ -3,9 +3,6 @@
   "recipe_book_tab": "meals",
   "ingredients": [
     {
-      "item": "minecraft:shulker_shell"
-    },
-    {
       "item": "endersdelight:shulker_mollusk"
     },
     {
@@ -15,11 +12,17 @@
       "item": "farmersdelight:rice"
     },
     {
-      "item": "farmersdelight:onion"
+      "item": "farmersdelight:tomato"
+    },
+    {
+      "item": "minecraft:brown_mushroom"
     }
   ],
   "result": {
     "item": "endersdelight:stuffed_shulker"
+  },
+  "container": {
+    "item": "minecraft:shulker_shell"
   },
   "experience": 1.0,
   "cookingtime": 200

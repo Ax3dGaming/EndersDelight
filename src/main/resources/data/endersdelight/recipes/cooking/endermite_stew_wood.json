@@ -7,11 +7,11 @@
     },
     {
       "item": "endersdelight:mite_crust"
-    },
-    {
-      "item": "minecraft:bowl"
     }
   ],
+  "container": {
+    "item": "minecraft:bowl"
+  },
   "result": {
     "item": "endersdelight:endermite_stew_wood"
   },

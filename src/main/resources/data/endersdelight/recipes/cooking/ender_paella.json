@@ -3,14 +3,20 @@
   "recipe_book_tab": "meals",
   "ingredients": [
     {
-      "item": "minecraft:chorus_fruit"
+      "tag": "endersdelight:enderman_sight"
+    },
+    {
+      "tag": "endersdelight:shulker_loot"
     },
     {
       "item": "minecraft:chorus_flower"
+    },
+    {
+      "item": "farmersdelight:rice"
     }
   ],
   "result": {
-    "item": "endersdelight:chorus_stew"
+    "item": "endersdelight:ender_paella"
   },
   "container": {
     "item": "endersdelight:shulker_bowl"
