@@ -70,7 +70,7 @@ public class ModItems {
 
 
     public static final RegistryObject<Item> CHORUS_JUICE = ITEMS.register("chorus_juice",
-            () -> new ChorusJuice(new Item.Properties().tab(ModCreativeTab.ENDERS_DELIGHT_TAB).food(ModFoods.FINGER)));
+            () -> new DrinkableItem(new Item.Properties().tab(ModCreativeTab.ENDERS_DELIGHT_TAB).food(ModFoods.FINGER)));
 
     public static final RegistryObject<Item> STRANGE_ECLAIR = ITEMS.register("strange_eclair",
             () -> new Item(new Item.Properties().food(ModFoods.STRANGE_ECLAIR).tab(ModCreativeTab.ENDERS_DELIGHT_TAB)));
@@ -87,10 +87,10 @@ public class ModItems {
             () -> new Item(new Item.Properties().tab(ModCreativeTab.ENDERS_DELIGHT_TAB).food(FoodValues.PIE_SLICE)));
 
     public static final RegistryObject<Item> CHORUS_STEW_WOOD = ITEMS.register("chorus_stew_wood",
-            () -> new Stew(new Item.Properties().food(ModFoods.CHORUS_STEW).tab(ModCreativeTab.ENDERS_DELIGHT_TAB), true));
+            () -> new com.axedgaming.endersdelight.item.ConsumableItem(bowlFoodItem(ModFoods.CHORUS_STEW).tab(ModCreativeTab.ENDERS_DELIGHT_TAB)));
 
     public static final RegistryObject<Item> CHORUS_STEW = ITEMS.register("chorus_stew",
-            () -> new Stew(new Item.Properties().food(ModFoods.CHORUS_STEW).tab(ModCreativeTab.ENDERS_DELIGHT_TAB), true));
+            () -> new com.axedgaming.endersdelight.item.ConsumableItem(bowlFoodItem(ModFoods.CHORUS_STEW).tab(ModCreativeTab.ENDERS_DELIGHT_TAB)));
 
     public static final RegistryObject<Item> CRISPY_SKEWER = ITEMS.register("crispy_skewer",
             () -> new Item(new Item.Properties().food(ModFoods.FINGER).tab(ModCreativeTab.ENDERS_DELIGHT_TAB)));
@@ -107,7 +107,7 @@ public class ModItems {
     }
 
     public static final RegistryObject<Item> ENDERMITE_STEW_WOOD = ITEMS.register("endermite_stew_wood",
-            () -> new Stew(new Item.Properties().tab(ModCreativeTab.ENDERS_DELIGHT_TAB).food(ModFoods.ENDERMITE_STEW), true));
+            () -> new com.axedgaming.endersdelight.item.ConsumableItem(bowlFoodItem(ModFoods.ENDERMITE_STEW).tab(ModCreativeTab.ENDERS_DELIGHT_TAB)));
 
     public static final RegistryObject<Item> PEARL_PASTA_WOOD;
 
@@ -134,7 +134,7 @@ public class ModItems {
     }
 
     public static final RegistryObject<Item> ENDERMITE_STEW = ITEMS.register("endermite_stew",
-            () -> new Stew(new Item.Properties().tab(ModCreativeTab.ENDERS_DELIGHT_TAB).food(ModFoods.ENDERMITE_STEW),true));
+            () -> new com.axedgaming.endersdelight.item.ConsumableItem(bowlFoodItem(ModFoods.ENDERMITE_STEW).tab(ModCreativeTab.ENDERS_DELIGHT_TAB)));
 
     public static final RegistryObject<Item> PEARL_PASTA;
 
