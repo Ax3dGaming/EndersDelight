@@ -2,7 +2,7 @@
   "type": "farmersdelight:cutting",
   "ingredients": [
     {
-      "item": "endersdelight:enderman_sight"
+      "item": "minecraft:ender_pearl"
     }
   ],
   "tool": {
@@ -10,7 +10,8 @@
   },
   "result": [
     {
-      "item": "endersdelight:sight_fragment"
+      "item": "endersdelight:ender_shard",
+      "count": 2
     }
   ]
 }

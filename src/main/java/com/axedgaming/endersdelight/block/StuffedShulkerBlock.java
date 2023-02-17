@@ -1,11 +1,8 @@
 package com.axedgaming.endersdelight.block;
 
-import com.axedgaming.endersdelight.item.ModItems;
 import com.axedgaming.endersdelight.util.EDTextUtil;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
-import net.minecraft.network.chat.Component;
-import net.minecraft.network.chat.TranslatableComponent;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.InteractionHand;
@@ -30,13 +27,8 @@ import net.minecraft.world.level.pathfinder.PathComputationType;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
-import vectorwing.farmersdelight.common.utility.TextUtils;
 
-import javax.swing.*;
 import java.util.function.Supplier;
-
-
-
 
 public class StuffedShulkerBlock extends Block {
 
