@@ -90,7 +90,7 @@ public class ModItems {
             () -> new com.axedgaming.endersdelight.item.ConsumableItem(bowlFoodItem(ModFoods.CHORUS_STEW).tab(ModCreativeTab.ENDERS_DELIGHT_TAB)));
 
     public static final RegistryObject<Item> CHORUS_STEW = ITEMS.register("chorus_stew",
-            () -> new com.axedgaming.endersdelight.item.ConsumableItem(bowlFoodItem(ModFoods.CHORUS_STEW).tab(ModCreativeTab.ENDERS_DELIGHT_TAB)));
+            () -> new com.axedgaming.endersdelight.item.ConsumableItem(shulkerBowlFoodItem(ModFoods.CHORUS_STEW).tab(ModCreativeTab.ENDERS_DELIGHT_TAB)));
 
     public static final RegistryObject<Item> CRISPY_SKEWER = ITEMS.register("crispy_skewer",
             () -> new Item(new Item.Properties().food(ModFoods.FINGER).tab(ModCreativeTab.ENDERS_DELIGHT_TAB)));
@@ -134,7 +134,7 @@ public class ModItems {
     }
 
     public static final RegistryObject<Item> ENDERMITE_STEW = ITEMS.register("endermite_stew",
-            () -> new com.axedgaming.endersdelight.item.ConsumableItem(bowlFoodItem(ModFoods.ENDERMITE_STEW).tab(ModCreativeTab.ENDERS_DELIGHT_TAB)));
+            () -> new com.axedgaming.endersdelight.item.ConsumableItem(shulkerBowlFoodItem(ModFoods.ENDERMITE_STEW).tab(ModCreativeTab.ENDERS_DELIGHT_TAB)));
 
     public static final RegistryObject<Item> PEARL_PASTA;
 
