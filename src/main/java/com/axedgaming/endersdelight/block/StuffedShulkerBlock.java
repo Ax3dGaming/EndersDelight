@@ -7,6 +7,7 @@ import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
+import net.minecraft.world.entity.item.ItemEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
@@ -92,6 +93,10 @@ public class StuffedShulkerBlock extends Block {
     protected InteractionResult takeServing(LevelAccessor level, BlockPos pos, BlockState state, Player player, InteractionHand hand) {
         int servings = state.getValue(getServingsProperty());
 
+        int x = 0;
+        int y = 0;
+        int z = 0;
+
         if (servings == 0) {
             level.playSound(null, pos, SoundEvents.WOOD_BREAK, SoundSource.PLAYERS, 0.8F, 0.8F);
             level.destroyBlock(pos, true);
@@ -105,9 +110,6 @@ public class StuffedShulkerBlock extends Block {
             if (servings > 0) {
                 if (!serving.hasContainerItem() || heldStack.sameItem(serving.getContainerItem())) {
                     level.setBlock(pos, state.setValue(getServingsProperty(), servings - 1), 3);
-                    if (!player.getAbilities().instabuild && serving.hasContainerItem()) {
-                        heldStack.shrink(1);
-                    }
                     if (!player.getInventory().add(serving)) {
                         player.drop(serving, false);
                     }
@@ -119,9 +121,9 @@ public class StuffedShulkerBlock extends Block {
                     return InteractionResult.SUCCESS;
                 }
             }
-            }   else {
+        }   else {
             player.displayClientMessage(EDTextUtil.getTranslation("block.stuffed_shulker.use_shulker_bowl", new ItemStack(Items.BOWL).getHoverName()), true);
-        }
+            }
         return InteractionResult.PASS;
     }
 
