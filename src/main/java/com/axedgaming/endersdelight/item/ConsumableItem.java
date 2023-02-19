@@ -16,7 +16,7 @@ public class ConsumableItem extends Item {
     public ConsumableItem(Properties pProperties) {
         super(pProperties);
 
-        this.hasFoodEffectTooltip = false;
+        this.hasFoodEffectTooltip = true;
         this.hasCustomTooltip = false;
     }
 
