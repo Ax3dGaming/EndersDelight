@@ -7,12 +7,10 @@ import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
-import net.minecraft.world.level.material.Material;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
-import vectorwing.farmersdelight.common.block.PieBlock;
 
 import java.util.function.ToIntFunction;
 
@@ -36,7 +34,7 @@ public class ModBlocks {
     static {
         BLOCKS = DeferredRegister.create(ForgeRegistries.BLOCKS, "endersdelight");
         CHORUS_CRATE = BLOCKS.register("chorus_crate", () -> {
-            return new Block(BlockBehaviour.Properties.of(Material.WOOD).strength(2.0F, 3.0F).sound(SoundType.WOOD));
+            return new Block(BlockBehaviour.Properties.copy(Blocks.OAK_PLANKS).strength(2.0F, 3.0F).sound(SoundType.WOOD));
         });
 
         ENDSTONE_STOVE = BLOCKS.register("endstone_stove", () -> {

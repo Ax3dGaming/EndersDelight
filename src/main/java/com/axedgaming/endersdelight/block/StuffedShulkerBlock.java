@@ -13,17 +13,16 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.context.BlockPlaceContext;
-import net.minecraft.world.level.BlockGetter;
-import net.minecraft.world.level.Level;
-import net.minecraft.world.level.LevelAccessor;
-import net.minecraft.world.level.LevelReader;
+import net.minecraft.world.level.*;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraft.world.level.block.state.properties.DirectionProperty;
 import net.minecraft.world.level.block.state.properties.IntegerProperty;
+import net.minecraft.world.level.block.state.properties.Property;
 import net.minecraft.world.level.pathfinder.PathComputationType;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.shapes.CollisionContext;
@@ -108,7 +107,7 @@ public class StuffedShulkerBlock extends Block {
 
         if (heldStack.is(Items.BOWL)) {
             if (servings > 0) {
-                if (!serving.hasContainerItem() || heldStack.sameItem(serving.getContainerItem())) {
+                if (!serving.hasCraftingRemainingItem() || ItemStack.isSameItem(heldStack, serving.getCraftingRemainingItem())) {
                     level.setBlock(pos, state.setValue(getServingsProperty(), servings - 1), 3);
                     if (!player.getInventory().add(serving)) {
                         player.drop(serving, false);
@@ -123,7 +122,7 @@ public class StuffedShulkerBlock extends Block {
             }
         }   else {
             player.displayClientMessage(EDTextUtil.getTranslation("block.stuffed_shulker.use_shulker_bowl", new ItemStack(Items.BOWL).getHoverName()), true);
-            }
+        }
         return InteractionResult.PASS;
     }
 
@@ -139,7 +138,7 @@ public class StuffedShulkerBlock extends Block {
 
     @Override
     public boolean canSurvive(BlockState state, LevelReader level, BlockPos pos) {
-        return level.getBlockState(pos.below()).getMaterial().isSolid();
+        return level.getBlockState(pos.below()).isSolid();
     }
 
     @Override
@@ -162,3 +161,4 @@ public class StuffedShulkerBlock extends Block {
         return false;
     }
 }
+
