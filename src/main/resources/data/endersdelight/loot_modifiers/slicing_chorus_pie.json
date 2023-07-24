@@ -9,7 +9,7 @@
     },
     {
       "condition": "minecraft:block_state_property",
-      "block": "farmersdelight:chorus_pie"
+      "block": "endersdelight:chorus_pie"
     }
   ],
   "slice": "endersdelight:chorus_pie_slice"
