@@ -24,96 +24,87 @@ public class ModItems {
             DeferredRegister.create(ForgeRegistries.ITEMS, EndersDelight.MODID);
 
     public static Item.Properties bowlFoodItem(FoodProperties food) {
-        return (new Item.Properties()).food(food).craftRemainder(Items.BOWL).stacksTo(16).tab(FarmersDelight.CREATIVE_TAB);
+        return (new Item.Properties()).food(food).craftRemainder(Items.BOWL).stacksTo(16);
     }
 
     public static Item.Properties shulkerBowlFoodItem(FoodProperties food) {
-        return (new Item.Properties()).food(food).craftRemainder(ModItems.SHULKER_BOWL.get()).stacksTo(16).tab(FarmersDelight.CREATIVE_TAB);
+        return (new Item.Properties()).food(food).craftRemainder(ModItems.SHULKER_BOWL.get()).stacksTo(16);
     }
 
     public static final RegistryObject<Item> ENDSTONE_STOVE;
-
+    public static final RegistryObject<Item> CHORUS_PIE;
     public static final RegistryObject<Item> CHORUS_CRATE;
+    public static final RegistryObject<Item> STUFFED_SHULKER;
 
     static {
-        CHORUS_CRATE = ITEMS.register("chorus_crate", () -> {
-            return new BlockItem((Block) ModBlocks.CHORUS_CRATE.get(), basicItem().tab(ModCreativeTab.ENDERS_DELIGHT_TAB));
-        });
-        ENDSTONE_STOVE = ITEMS.register("endstone_stove", () -> {
-            return new BlockItem((Block) ModBlocks.ENDSTONE_STOVE.get(), basicItem().tab(ModCreativeTab.ENDERS_DELIGHT_TAB));
-        });
+        CHORUS_PIE = ITEMS.register("chorus_pie", () -> new BlockItem((Block) ModBlocks.CHORUS_PIE.get(), basicItem().stacksTo(1)));
+        CHORUS_CRATE = ITEMS.register("chorus_crate", () -> new BlockItem((Block) ModBlocks.CHORUS_CRATE.get(), basicItem()));
+        STUFFED_SHULKER = ITEMS.register("stuffed_shulker", () -> new BlockItem((Block) ModBlocks.STUFFED_SHULKER_BLOCK.get(), basicItem()));
+        ENDSTONE_STOVE = ITEMS.register("endstone_stove", () -> new BlockItem((Block) ModBlocks.ENDSTONE_STOVE.get(), basicItem()));
     }
 
     public static final RegistryObject<Item> SHULKER_BOWL = ITEMS.register("shulker_bowl",
-            () -> new Item(new Item.Properties().tab(ModCreativeTab.ENDERS_DELIGHT_TAB)));
+            () -> new Item(new Item.Properties()));
 
     public static final RegistryObject<Item> MITE_CRUST = ITEMS.register("mite_crust",
-            () -> new Item(new Item.Properties().tab(ModCreativeTab.ENDERS_DELIGHT_TAB).food(ModFoods.DIET)));
+            () -> new Item(new Item.Properties().food(ModFoods.DIET)));
 
     public static final RegistryObject<Item> ENDER_SHARD = ITEMS.register("ender_shard",
-            () -> new Item(new Item.Properties().tab(ModCreativeTab.ENDERS_DELIGHT_TAB)));
+            () -> new Item(new Item.Properties()));
 
     public static final RegistryObject<Item> ENDERMAN_SIGHT = ITEMS.register("enderman_sight",
-            () -> new Item(new Item.Properties().tab(ModCreativeTab.ENDERS_DELIGHT_TAB)));
+            () -> new Item(new Item.Properties()));
 
     public static final RegistryObject<Item> SIGHT_FRAGMENT = ITEMS.register("sight_fragment",
-            () -> new Item(new Item.Properties().tab(ModCreativeTab.ENDERS_DELIGHT_TAB)));
+            () -> new Item(new Item.Properties()));
 
     public static final RegistryObject<Item> SHULKER_MOLLUSK = ITEMS.register("shulker_mollusk",
-            () -> new Item(new Item.Properties().tab(ModCreativeTab.ENDERS_DELIGHT_TAB).food(ModFoods.DIET)));
+            () -> new Item(new Item.Properties().food(ModFoods.DIET)));
 
     public static final RegistryObject<Item> SHULKER_FILET = ITEMS.register("shulker_filet",
-            () -> new Item(new Item.Properties().tab(ModCreativeTab.ENDERS_DELIGHT_TAB).food(ModFoods.DIET)));
+            () -> new Item(new Item.Properties().food(ModFoods.DIET)));
 
     public static final RegistryObject<Item> UNCANNY_COOKIES = ITEMS.register("uncanny_cookies",
-            () -> new Item(new Item.Properties().food(ModFoods.UNCANNY_COOKIES).tab(ModCreativeTab.ENDERS_DELIGHT_TAB)));
+            () -> new Item(new Item.Properties().food(ModFoods.UNCANNY_COOKIES)));
 
 
     public static final RegistryObject<Item> CHORUS_JUICE = ITEMS.register("chorus_juice",
-            () -> new DrinkableItem(new Item.Properties().tab(ModCreativeTab.ENDERS_DELIGHT_TAB).food(ModFoods.FINGER)));
+            () -> new DrinkableItem(new Item.Properties().food(ModFoods.FINGER)));
 
     public static final RegistryObject<Item> STRANGE_ECLAIR = ITEMS.register("strange_eclair",
-            () -> new Item(new Item.Properties().food(ModFoods.STRANGE_ECLAIR).tab(ModCreativeTab.ENDERS_DELIGHT_TAB)));
-
-    public static final RegistryObject<Item> CHORUS_PIE;
-
-    static {
-        CHORUS_PIE = ITEMS.register("chorus_pie", () -> {
-            return new BlockItem((Block) ModBlocks.CHORUS_PIE.get(), basicItem().stacksTo(1).tab(ModCreativeTab.ENDERS_DELIGHT_TAB));
-        });
-    }
+            () -> new Item(new Item.Properties().food(ModFoods.STRANGE_ECLAIR)));
 
     public static final RegistryObject<Item> CHORUS_PIE_SLICE = ITEMS.register("chorus_pie_slice",
-            () -> new Item(new Item.Properties().tab(ModCreativeTab.ENDERS_DELIGHT_TAB).food(FoodValues.PIE_SLICE)));
+            () -> new Item(new Item.Properties().food(FoodValues.PIE_SLICE)));
 
     public static final RegistryObject<Item> CHORUS_STEW_WOOD = ITEMS.register("chorus_stew_wood",
-            () -> new com.axedgaming.endersdelight.item.ConsumableItem(bowlFoodItem(ModFoods.CHORUS_STEW).tab(ModCreativeTab.ENDERS_DELIGHT_TAB)));
+            () -> new com.axedgaming.endersdelight.item.ConsumableItem(bowlFoodItem(ModFoods.CHORUS_STEW)));
 
     public static final RegistryObject<Item> CHORUS_STEW = ITEMS.register("chorus_stew",
-            () -> new com.axedgaming.endersdelight.item.ConsumableItem(shulkerBowlFoodItem(ModFoods.CHORUS_STEW).tab(ModCreativeTab.ENDERS_DELIGHT_TAB)));
+            () -> new com.axedgaming.endersdelight.item.ConsumableItem(shulkerBowlFoodItem(ModFoods.CHORUS_STEW)));
 
     public static final RegistryObject<Item> CRISPY_SKEWER = ITEMS.register("crispy_skewer",
-            () -> new Item(new Item.Properties().food(ModFoods.FINGER).tab(ModCreativeTab.ENDERS_DELIGHT_TAB)));
+            () -> new Item(new Item.Properties().food(ModFoods.FINGER)));
 
     public static final RegistryObject<Item> CRAWLING_SANDWICH = ITEMS.register("crawling_sandwich",
-            () -> new Item(new Item.Properties().food(ModFoods.CRAWLING_SANDWICH).tab(ModCreativeTab.ENDERS_DELIGHT_TAB)));
+            () -> new Item(new Item.Properties().food(ModFoods.CRAWLING_SANDWICH)));
 
     public static final RegistryObject<Item> TWISTED_CEREAL_WOOD;
 
     static {
         TWISTED_CEREAL_WOOD = ITEMS.register("twisted_cereal_wood", () -> {
-            return new ConsumableItem(bowlFoodItem(ModFoods.TWISTED_CEREAL).tab(ModCreativeTab.ENDERS_DELIGHT_TAB), true);
+            return new ConsumableItem(bowlFoodItem(ModFoods.TWISTED_CEREAL), true);
         });
     }
 
     public static final RegistryObject<Item> ENDERMITE_STEW_WOOD = ITEMS.register("endermite_stew_wood",
-            () -> new com.axedgaming.endersdelight.item.ConsumableItem(bowlFoodItem(ModFoods.ENDERMITE_STEW).tab(ModCreativeTab.ENDERS_DELIGHT_TAB)));
+            () -> new com.axedgaming.endersdelight.item.ConsumableItem(bowlFoodItem(ModFoods.ENDERMITE_STEW)));
 
     public static final RegistryObject<Item> PEARL_PASTA_WOOD;
 
     static {
         PEARL_PASTA_WOOD = ITEMS.register("pearl_pasta_wood", () -> {
-            return new ConsumableItem(bowlFoodItem(ModFoods.PEARL_PASTA).tab(ModCreativeTab.ENDERS_DELIGHT_TAB), true);
+            return new ConsumableItem(bowlFoodItem(ModFoods.PEARL_PASTA), true);
         });
     }
 
@@ -121,7 +112,7 @@ public class ModItems {
 
     static {
         ENDER_PAELLA_WOOD = ITEMS.register("ender_paella_wood", () -> {
-            return new ConsumableItem(bowlFoodItem(ModFoods.ENDER_PAELLA).tab(ModCreativeTab.ENDERS_DELIGHT_TAB), true);
+            return new ConsumableItem(bowlFoodItem(ModFoods.ENDER_PAELLA), true);
         });
     }
 
@@ -129,18 +120,18 @@ public class ModItems {
 
     static {
         TWISTED_CEREAL = ITEMS.register("twisted_cereal", () -> {
-            return new ConsumableItem(shulkerBowlFoodItem(ModFoods.TWISTED_CEREAL).tab(ModCreativeTab.ENDERS_DELIGHT_TAB), true);
+            return new ConsumableItem(shulkerBowlFoodItem(ModFoods.TWISTED_CEREAL), true);
         });
     }
 
     public static final RegistryObject<Item> ENDERMITE_STEW = ITEMS.register("endermite_stew",
-            () -> new com.axedgaming.endersdelight.item.ConsumableItem(shulkerBowlFoodItem(ModFoods.ENDERMITE_STEW).tab(ModCreativeTab.ENDERS_DELIGHT_TAB)));
+            () -> new com.axedgaming.endersdelight.item.ConsumableItem(shulkerBowlFoodItem(ModFoods.ENDERMITE_STEW)));
 
     public static final RegistryObject<Item> PEARL_PASTA;
 
     static {
         PEARL_PASTA = ITEMS.register("pearl_pasta", () -> {
-            return new ConsumableItem(shulkerBowlFoodItem(ModFoods.PEARL_PASTA).tab(ModCreativeTab.ENDERS_DELIGHT_TAB), true);
+            return new ConsumableItem(shulkerBowlFoodItem(ModFoods.PEARL_PASTA), true);
         });
     }
 
@@ -148,7 +139,7 @@ public class ModItems {
 
     static {
         ENDER_PAELLA = ITEMS.register("ender_paella", () -> {
-            return new ConsumableItem(shulkerBowlFoodItem(ModFoods.ENDER_PAELLA).tab(ModCreativeTab.ENDERS_DELIGHT_TAB), true);
+            return new ConsumableItem(shulkerBowlFoodItem(ModFoods.ENDER_PAELLA), true);
         });
     }
 
@@ -156,15 +147,7 @@ public class ModItems {
 
     static {
         STUFFED_SHULKER_BOWL = ITEMS.register("stuffed_shulker_bowl", () -> {
-            return new ConsumableItem(bowlFoodItem(ModFoods.STUFFED_SHULKER).tab(ModCreativeTab.ENDERS_DELIGHT_TAB), true);
-        });
-    }
-
-    public static final RegistryObject<Item> STUFFED_SHULKER;
-
-    static {
-        STUFFED_SHULKER = ITEMS.register("stuffed_shulker", () -> {
-            return new BlockItem((Block) ModBlocks.STUFFED_SHULKER_BLOCK.get(), basicItem().stacksTo(1).tab(ModCreativeTab.ENDERS_DELIGHT_TAB));
+            return new ConsumableItem(bowlFoodItem(ModFoods.STUFFED_SHULKER), true);
         });
     }
 
