@@ -2,6 +2,7 @@ package com.axedgaming.endersdelight.Common.Blocks;
 
 import com.axedgaming.endersdelight.Common.Blocks.entity.EndstoneStoveBlockEntity;
 import com.axedgaming.endersdelight.Common.Registries.EdBlockEntityTypes;
+import com.axedgaming.endersdelight.Common.Registries.EdParticles;
 import com.mojang.serialization.MapCodec;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
@@ -180,7 +181,7 @@ public class EndstoneStoveBlock extends BaseEntityBlock {
             double yOffset = rand.nextDouble() * (double)6.0F / (double)16.0F;
             double zOffset = direction$axis == Direction.Axis.Z ? (double)direction.getStepZ() * 0.52 : horizontalOffset;
             level.addParticle(ParticleTypes.SMOKE, x + xOffset, y + yOffset, z + zOffset, (double)0.0F, (double)0.0F, (double)0.0F);
-            level.addParticle(ParticleTypes.FLAME, x + xOffset, y + yOffset, z + zOffset, (double)0.0F, (double)0.0F, (double)0.0F);
+            level.addParticle(EdParticles.END_FLAME.get(), x + xOffset, y + yOffset, z + zOffset, (double)0.0F, (double)0.0F, (double)0.0F);
         }
 
     }

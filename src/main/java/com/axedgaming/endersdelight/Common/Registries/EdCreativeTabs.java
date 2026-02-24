@@ -16,10 +16,40 @@ public class EdCreativeTabs {
             .withTabsBefore(CreativeModeTabs.COMBAT)
             .icon(() -> EdItems.CHORUS_CRATE.asItem().getDefaultInstance())
             .displayItems(((itemDisplayParameters, output) -> {
+                /* ~~ Block Items ~~ */
                 output.accept(EdItems.CHORUS_CRATE.asItem());
+                output.accept(EdItems.ENDSTONE_STOVE.asItem());
                 output.accept(EdItems.STUFFED_SHULKER.asItem());
+                output.accept(EdItems.ETHEREAL_SAFFRON.asItem());
+                output.accept(EdItems.AMBERVEIL.asItem());
+                output.accept(EdItems.CHORUSFLAME.asItem());
+                output.accept(EdItems.VOIDPEPPER.asItem());
+
+                /* ~~ Items ~~ */
                 output.accept(EdItems.SHULKER_BOWL.asItem());
+                output.accept(EdItems.MITE_CRUST.asItem());
+                output.accept(EdItems.ENDER_SHARD.asItem());
+                output.accept(EdItems.ENDERMAN_SIGHT.asItem());
+                output.accept(EdItems.SIGHT_FRAGMENT.asItem());
+                output.accept(EdItems.SHULKER_MOLLUSK.asItem());
+                output.accept(EdItems.SHULKER_FILET.asItem());
+                output.accept(EdItems.UNCANNY_COOKIES.asItem());
+                output.accept(EdItems.CHORUS_JUICE.asItem());
+                output.accept(EdItems.STRANGE_ECLAIR.asItem());
+                output.accept(EdItems.CHORUS_PIE_SLICE.asItem());
+                output.accept(EdItems.CHORUS_STEW.asItem());
+                output.accept(EdItems.CRISPY_SKEWER.asItem());
+                output.accept(EdItems.CRAWLING_SANDWICH.asItem());
+                output.accept(EdItems.TWISTED_CEREAL.asItem());
+                output.accept(EdItems.ENDERMITE_STEW.asItem());
+                output.accept(EdItems.PEARL_PASTA.asItem());
+                output.accept(EdItems.ENDER_PAELLA.asItem());
                 output.accept(EdItems.BOWL_OF_STUFFED_SHULKER.asItem());
+                output.accept(EdItems.AMBERVEIL_STEW.asItem());
+                output.accept(EdItems.AMBERVEILED_CURRY.asItem());
+                output.accept(EdItems.CHICKEN_CURRY.asItem());
+                output.accept(EdItems.STEAK_FRIES.asItem());
+                output.accept(EdItems.VEIL_OF_FLAMES_RISOTTO.asItem());
             })
             ).build()
     );

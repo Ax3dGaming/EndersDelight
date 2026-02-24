@@ -1,9 +1,9 @@
 package com.axedgaming.endersdelight;
 
+import com.axedgaming.endersdelight.Client.Particles.EndFlameParticleProvider;
 import com.axedgaming.endersdelight.Client.renderer.EndstoneStoveRenderer;
 import com.axedgaming.endersdelight.Common.Registries.EdBlockEntityTypes;
-import net.minecraft.client.Minecraft;
-import net.minecraft.world.level.block.entity.BlockEntityType;
+import com.axedgaming.endersdelight.Common.Registries.EdParticles;
 import net.neoforged.api.distmarker.Dist;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.ModContainer;
@@ -11,6 +11,7 @@ import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.fml.common.Mod;
 import net.neoforged.fml.event.lifecycle.FMLClientSetupEvent;
 import net.neoforged.neoforge.client.event.EntityRenderersEvent;
+import net.neoforged.neoforge.client.event.RegisterParticleProvidersEvent;
 import net.neoforged.neoforge.client.gui.ConfigurationScreen;
 import net.neoforged.neoforge.client.gui.IConfigScreenFactory;
 
@@ -23,13 +24,18 @@ public class EndersDelightClient {
 
     @SubscribeEvent
     static void onClientSetup(FMLClientSetupEvent event) {
-        // Some client setup code
-        EndersDelight.LOGGER.info("HELLO FROM CLIENT SETUP");
-        EndersDelight.LOGGER.info("MINECRAFT NAME >> {}", Minecraft.getInstance().getUser().getName());
     }
 
     @SubscribeEvent
     public static void onRegisterRenderers(EntityRenderersEvent.RegisterRenderers event) {
-        event.registerBlockEntityRenderer((BlockEntityType) EdBlockEntityTypes.ENDSTONE_STOVE.get(), EndstoneStoveRenderer::new);
+        event.registerBlockEntityRenderer(EdBlockEntityTypes.ENDSTONE_STOVE.get(), EndstoneStoveRenderer::new);
+    }
+
+    @SubscribeEvent
+    public static void registerParticleFactories(RegisterParticleProvidersEvent event) {
+        event.registerSpriteSet(
+                EdParticles.END_FLAME.get(),
+                EndFlameParticleProvider::new
+        );
     }
 }

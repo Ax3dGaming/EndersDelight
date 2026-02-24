@@ -1,9 +1,6 @@
 package com.axedgaming.endersdelight;
 
-import com.axedgaming.endersdelight.Common.Registries.EdBlockEntityTypes;
-import com.axedgaming.endersdelight.Common.Registries.EdBlocks;
-import com.axedgaming.endersdelight.Common.Registries.EdCreativeTabs;
-import com.axedgaming.endersdelight.Common.Registries.EdItems;
+import com.axedgaming.endersdelight.Common.Registries.*;
 import org.slf4j.Logger;
 
 import com.mojang.logging.LogUtils;
@@ -47,6 +44,7 @@ public class EndersDelight {
         EdItems.ITEMS.register(modEventBus);
         EdCreativeTabs.ED_CREATIVE_MODE_TABS.register(modEventBus);
         EdBlockEntityTypes.BLOCK_ENTITY_TYPES.register(modEventBus);
+        EdParticles.ED_PARTICLES.register(modEventBus);
 
 
         NeoForge.EVENT_BUS.register(this);
