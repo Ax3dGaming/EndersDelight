@@ -7,13 +7,14 @@ import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.CreativeModeTabs;
 import net.neoforged.neoforge.registries.DeferredHolder;
 import net.neoforged.neoforge.registries.DeferredRegister;
+import vectorwing.farmersdelight.common.registry.ModCreativeTabs;
 
 public class EdCreativeTabs {
     public static final DeferredRegister<CreativeModeTab> ED_CREATIVE_MODE_TABS = DeferredRegister.create(Registries.CREATIVE_MODE_TAB, EndersDelight.MOD_ID);
 
     public static final DeferredHolder<CreativeModeTab, CreativeModeTab> ENDERS_DELIGHT_TAB = ED_CREATIVE_MODE_TABS.register("enders_delight_tab", () -> CreativeModeTab.builder()
             .title(Component.translatable("itemGroup.endersdelight"))
-            .withTabsBefore(CreativeModeTabs.COMBAT)
+            .withTabsBefore(CreativeModeTabs.SPAWN_EGGS)
             .icon(() -> EdItems.CHORUS_CRATE.asItem().getDefaultInstance())
             .displayItems(((itemDisplayParameters, output) -> {
                 /* ~~ Block Items ~~ */
@@ -30,7 +31,7 @@ public class EdCreativeTabs {
                 output.accept(EdItems.MITE_CRUST.asItem());
                 output.accept(EdItems.ENDER_SHARD.asItem());
                 output.accept(EdItems.ENDERMAN_SIGHT.asItem());
-                output.accept(EdItems.SIGHT_FRAGMENT.asItem());
+                output.accept(EdItems.SIGHT_FRAGMENTS.asItem());
                 output.accept(EdItems.SHULKER_MOLLUSK.asItem());
                 output.accept(EdItems.SHULKER_FILET.asItem());
                 output.accept(EdItems.UNCANNY_COOKIES.asItem());
@@ -44,7 +45,7 @@ public class EdCreativeTabs {
                 output.accept(EdItems.ENDERMITE_STEW.asItem());
                 output.accept(EdItems.PEARL_PASTA.asItem());
                 output.accept(EdItems.ENDER_PAELLA.asItem());
-                output.accept(EdItems.BOWL_OF_STUFFED_SHULKER.asItem());
+                output.accept(EdItems.STUFFED_SHULKER_BOWL.asItem());
                 output.accept(EdItems.AMBERVEIL_STEW.asItem());
                 output.accept(EdItems.AMBERVEILED_CURRY.asItem());
                 output.accept(EdItems.CHICKEN_CURRY.asItem());

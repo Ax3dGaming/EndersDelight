@@ -21,5 +21,5 @@ public class EdBlocks {
             () -> new EndstoneStoveBlock(BlockBehaviour.Properties.ofFullCopy(STOVE.get())));
 
     public static final DeferredBlock<Block> STUFFED_SHULKER = BLOCKS.register("stuffed_shulker",
-            () -> new FeastBlock(BlockBehaviour.Properties.ofFullCopy(ModBlocks.STUFFED_PUMPKIN_BLOCK.get()),EdItems.BOWL_OF_STUFFED_SHULKER,false));
+            () -> new FeastBlock(BlockBehaviour.Properties.ofFullCopy(ModBlocks.STUFFED_PUMPKIN_BLOCK.get()),EdItems.STUFFED_SHULKER_BOWL,false));
 }
