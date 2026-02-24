@@ -1,25 +1,13 @@
+# Ender's Delight
+![Banner](https://media.forgecdn.net/attachments/818/751/image_2024-03-04_102414885.png)
 
-Installation information
-=======
+![Modrinth Downloads](https://img.shields.io/modrinth/dt/enders-delight?logo=modrinth&label=Modrinth&link=https%3A%2F%2Fmodrinth.com%2Fmod%2Fenders-delight)
+![CurseForge Downloads](https://img.shields.io/curseforge/dt/827163?logo=Curseforge&label=Curseforge&link=https%3A%2F%2Fwww.curseforge.com%2Fminecraft%2Fmc-mods%2Fenders-delight)
 
-This template repository can be directly cloned to get you started with a new
-mod. Simply create a new repository cloned from this one, by following the
-instructions provided by [GitHub](https://docs.github.com/en/repositories/creating-and-managing-repositories/creating-a-repository-from-a-template).
 
-Once you have your clone, simply open the repository in the IDE of your choice. The usual recommendation for an IDE is either IntelliJ IDEA or Eclipse.
 
-If at any point you are missing libraries in your IDE, or you've run into problems you can
-run `gradlew --refresh-dependencies` to refresh the local cache. `gradlew clean` to reset everything 
-{this does not affect your code} and then start the process again.
+**Ender's Delight is a  [Farmer's Delight](https://www.curseforge.com/minecraft/mc-mods/farmers-delight)  addon that make you able to cook delicious dishes from the amazing resources you have found in the End, such as ender pearls or chorus fruits. Or, add Endermen or Shulkers meat to your recipes to create truly extraordinary meals. With this mod, you can push the boundaries of cooking in Minecraft and discover a new gastronomic dimension. Get ready to explore the unique flavors of the End, experiment with new recipes, and amaze your friends with your culinary skills**
 
-Mapping Names:
-============
-By default, the MDK is configured to use the official mapping names from Mojang for methods and fields 
-in the Minecraft codebase. These names are covered by a specific license. All modders should be aware of this
-license. For the latest license text, refer to the mapping file itself, or the reference copy here:
-https://github.com/NeoForged/NeoForm/blob/main/Mojang.md
+Discover new ingredients for your favorite dishes with the new drops from End creatures! Add some sparkle to your dishes with Ender Sight (unstable Endermen eyes that produce a blinding light). Or, add a unique texture with Shulker Mollusk (a slimy creature inside the tough shell of the Shulker). And if you want something crispy, try Mite Crust (crispy but pungent Endermite skin).
 
-Additional Resources: 
-==========
-Community Documentation: https://docs.neoforged.net/  
-NeoForged Discord: https://discord.neoforged.net/
+
