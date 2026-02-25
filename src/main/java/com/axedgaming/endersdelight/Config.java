@@ -1,42 +1,87 @@
 package com.axedgaming.endersdelight;
 
-import java.util.List;
-import java.util.Set;
-import java.util.stream.Collectors;
-
-import net.minecraft.core.registries.BuiltInRegistries;
-import net.minecraft.resources.ResourceLocation;
-import net.minecraft.world.item.Item;
-import net.neoforged.bus.api.SubscribeEvent;
-import net.neoforged.fml.common.EventBusSubscriber;
-import net.neoforged.fml.event.config.ModConfigEvent;
 import net.neoforged.neoforge.common.ModConfigSpec;
 
-// An example config class. This is not required, but it's a good idea to have one to keep your config organized.
-// Demonstrates how to use Neo's config APIs
 public class Config {
+
     private static final ModConfigSpec.Builder BUILDER = new ModConfigSpec.Builder();
 
-    public static final ModConfigSpec.BooleanValue LOG_DIRT_BLOCK = BUILDER
-            .comment("Whether to log the dirt block on common setup")
-            .define("logDirtBlock", true);
+    // =============================
+    // ENDER PHASING
+    // =============================
+    public static final ModConfigSpec.BooleanValue DOES_PHASING_TELEPORT_PLAYER;
+    public static final ModConfigSpec.BooleanValue DOES_PHASING_TELEPORT_PLAYER_WHEN_DAMAGE_TAKEN_BY_WATER;
+    public static final ModConfigSpec.BooleanValue DOES_WATER_HURT_PLAYER_WITH_PHASING_EFFECT;
 
-    public static final ModConfigSpec.IntValue MAGIC_NUMBER = BUILDER
-            .comment("A magic number")
-            .defineInRange("magicNumber", 42, 0, Integer.MAX_VALUE);
+    public static final ModConfigSpec.IntValue HORIZONTAL_PHASING_TELEPORT_RANGE;
+    public static final ModConfigSpec.IntValue VERTICAL_PHASING_TELEPORT_RANGE;
+    public static final ModConfigSpec.IntValue COOLDOWN_BETWEEN_PHASING_TELEPORTS;
 
-    public static final ModConfigSpec.ConfigValue<String> MAGIC_NUMBER_INTRODUCTION = BUILDER
-            .comment("What you want the introduction message to be for the magic number")
-            .define("magicNumberIntroduction", "The magic number is... ");
+    // =============================
+    // VOID PEPPER
+    // =============================
+    public static final ModConfigSpec.IntValue VOID_PEPPER_SPREAD_RADIUS;
+    public static final ModConfigSpec.IntValue VOID_PEPPER_SPREAD_ATTEMPTS;
 
-    // a list of strings that are treated as resource locations for items
-    public static final ModConfigSpec.ConfigValue<List<? extends String>> ITEM_STRINGS = BUILDER
-            .comment("A list of items to log on common setup.")
-            .defineListAllowEmpty("items", List.of("minecraft:iron_ingot"), () -> "", Config::validateItemName);
+    /** Chance to spread on tick (0..1). Default = 2/3 */
+    public static final ModConfigSpec.DoubleValue VOID_PEPPER_SPREAD_CHANCE;
 
-    static final ModConfigSpec SPEC = BUILDER.build();
+    /** Chance to become PEPPER on tick (0..1). Default = 1/3 */
+    public static final ModConfigSpec.DoubleValue VOID_PEPPER_GROW_PEPPER_CHANCE;
 
-    private static boolean validateItemName(final Object obj) {
-        return obj instanceof String itemName && BuiltInRegistries.ITEM.containsKey(ResourceLocation.parse(itemName));
+    public static final ModConfigSpec SPEC;
+
+    static {
+        // -------- Ender Phasing
+        BUILDER.push("ender_phasing");
+
+        DOES_PHASING_TELEPORT_PLAYER = BUILDER
+                .comment("If true, Ender Phasing can teleport the player when damage is taken.")
+                .define("doesPhasingTeleportPlayer", true);
+
+        DOES_PHASING_TELEPORT_PLAYER_WHEN_DAMAGE_TAKEN_BY_WATER = BUILDER
+                .comment("If true, Ender Phasing can teleport even when the damage source is water/rain/bubbles effects.")
+                .define("doesPhasingTeleportPlayerWhenDamageTakenByWater", false);
+
+        DOES_WATER_HURT_PLAYER_WITH_PHASING_EFFECT = BUILDER
+                .comment("If true, being in water/bubbles while Ender Phasing is active deals damage.")
+                .define("doesWaterHurtPlayerWithPhasingEffect", true);
+
+        HORIZONTAL_PHASING_TELEPORT_RANGE = BUILDER
+                .comment("Horizontal teleport range (blocks).")
+                .defineInRange("horizontalPhasingTeleportRange", 5, 1, 64);
+
+        VERTICAL_PHASING_TELEPORT_RANGE = BUILDER
+                .comment("Vertical teleport range (blocks).")
+                .defineInRange("verticalPhasingTeleportRange", 3, 1, 32);
+
+        COOLDOWN_BETWEEN_PHASING_TELEPORTS = BUILDER
+                .comment("Cooldown between phasing teleports (ticks). 20 ticks = 1 second.")
+                .defineInRange("cooldownBetweenPhasingTeleports", 10, 0, 200);
+
+        BUILDER.pop();
+
+        // -------- Void Pepper
+        BUILDER.push("void_pepper");
+
+        VOID_PEPPER_SPREAD_RADIUS = BUILDER
+                .comment("Max Manhattan radius for void pepper spreading attempts.")
+                .defineInRange("spreadRadius", 7, 1, 32);
+
+        VOID_PEPPER_SPREAD_ATTEMPTS = BUILDER
+                .comment("How many random positions are tried per spread tick.")
+                .defineInRange("spreadAttempts", 15, 1, 200);
+
+        VOID_PEPPER_SPREAD_CHANCE = BUILDER
+                .comment("Chance (0..1) to attempt spreading on a tick while SPREADING is true.")
+                .defineInRange("spreadChance", 2.0D / 3.0D, 0.0D, 1.0D);
+
+        VOID_PEPPER_GROW_PEPPER_CHANCE = BUILDER
+                .comment("Chance (0..1) to become PEPPER on a tick while SPREADING is true.")
+                .defineInRange("pepperGrowChance", 1.0D / 3.0D, 0.0D, 1.0D);
+
+        BUILDER.pop();
+
+        SPEC = BUILDER.build();
     }
 }

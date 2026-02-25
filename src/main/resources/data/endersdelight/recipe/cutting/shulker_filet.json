@@ -1,0 +1,19 @@
+{
+  "type": "farmersdelight:cutting",
+  "ingredients": [
+    {
+      "item": "endersdelight:shulker_mollusk"
+    }
+  ],
+  "result": [
+    {
+      "item": {
+        "id": "endersdelight:shulker_filet",
+        "count": 2
+      }
+    }
+  ],
+  "tool": {
+    "tag": "c:tools/knife"
+  }
+}

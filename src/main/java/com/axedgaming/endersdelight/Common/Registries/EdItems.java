@@ -31,16 +31,16 @@ public class EdItems {
             () -> new BlockItem(EdBlocks.STUFFED_SHULKER.get(), new Item.Properties().stacksTo(1)));
 
     public static final DeferredItem<Item> ETHEREAL_SAFFRON = ITEMS.register("ethereal_saffron",
-            () -> new BlockItem(EdBlocks.CHORUS_CRATE.get(), new Item.Properties()));
+            () -> new BlockItem(EdBlocks.ETHEREAL_SAFFRON_BUSH.get(), new Item.Properties()));
 
     public static final DeferredItem<Item> AMBERVEIL = ITEMS.register("amberveil",
-            () -> new BlockItem(EdBlocks.CHORUS_CRATE.get(), new Item.Properties()));
+            () -> new BlockItem(EdBlocks.AMBERVEIL_MUSHROOM.get(), new Item.Properties()));
 
     public static final DeferredItem<Item> CHORUSFLAME = ITEMS.register("chorusflame",
-            () -> new BlockItem(EdBlocks.CHORUS_CRATE.get(), new Item.Properties()));
+            () -> new BlockItem(EdBlocks.CHORUS_FLAME_BUSH.get(), new Item.Properties()));
 
     public static final DeferredItem<Item> VOIDPEPPER = ITEMS.register("voidpepper",
-            () -> new BlockItem(EdBlocks.CHORUS_CRATE.get(), new Item.Properties()));
+            () -> new BlockItem(EdBlocks.VOID_PEPPER_BUSH.get(), new Item.Properties()));
 
 
     /* ~~ Items ~~ */
@@ -103,17 +103,17 @@ public class EdItems {
             () -> new ConsumableItem(shulkerBowlFoodItem(EdFoods.STUFFED_SHULKER)));
 
     public static final DeferredItem<Item> AMBERVEIL_STEW = ITEMS.register("amberveil_stew",
-            () -> new Item(new Item.Properties()));
+            () -> new ConsumableItem(shulkerBowlFoodItem(EdFoods.AMBERVEIL_STEW)));
 
     public static final DeferredItem<Item> AMBERVEILED_CURRY = ITEMS.register("amberveiled_curry",
-            () -> new Item(new Item.Properties()));
+            () -> new ConsumableItem(shulkerBowlFoodItem(EdFoods.AMBERVEILED_CURRY)));
 
     public static final DeferredItem<Item> CHICKEN_CURRY = ITEMS.register("chicken_curry",
-            () -> new Item(new Item.Properties()));
+            () -> new ConsumableItem(shulkerBowlFoodItem(EdFoods.CHICKEN)));
 
     public static final DeferredItem<Item> STEAK_FRIES = ITEMS.register("steak_fries",
-            () -> new Item(new Item.Properties()));
+            () -> new ConsumableItem(shulkerBowlFoodItem(EdFoods.STEAK_FRIES)));
 
     public static final DeferredItem<Item> VEIL_OF_FLAMES_RISOTTO = ITEMS.register("veil_of_flames_risotto",
-            () -> new Item(new Item.Properties()));
+            () -> new ConsumableItem(shulkerBowlFoodItem(EdFoods.RISOTTO)));
 }

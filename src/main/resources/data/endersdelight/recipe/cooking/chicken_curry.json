@@ -1,0 +1,33 @@
+{
+  "type": "farmersdelight:cooking",
+  "recipe_book_tab": "meals",
+  "ingredients": [
+    {
+      "item": "endersdelight:amberveil"
+    },
+    {
+      "item": "endersdelight:ethereal_saffron"
+    },
+    {
+      "item": "endersdelight:voidpepper"
+    },
+    {
+      "item": "minecraft:chicken"
+    },
+    {
+      "item": "farmersdelight:chicken_cuts"
+    },
+    {
+      "item": "farmersdelight:rice"
+    }
+  ],
+  "result": {
+    "id": "endersdelight:chicken_curry"
+  },
+  "container": {
+    "count": 1,
+    "id": "endersdelight:shulker_bowl"
+  },
+  "experience": 1.0,
+  "cookingtime": 200
+}

@@ -1,0 +1,23 @@
+{
+  "type": "farmersdelight:cooking",
+  "recipe_book_tab": "meals",
+  "ingredients": [
+    {
+      "tag": "endersdelight:enderman_loot"
+    },
+    {
+      "tag": "c:foods/pasta"
+    },
+    {
+      "item": "endersdelight:chorus_juice"
+    }
+  ],
+  "result": {
+    "id": "endersdelight:pearl_pasta"
+  },
+  "container": {
+    "id": "endersdelight:shulker_bowl"
+  },
+  "experience": 1.0,
+  "cookingtime": 200
+}

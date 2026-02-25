@@ -1,0 +1,24 @@
+{
+  "type": "farmersdelight:cooking",
+  "recipe_book_tab": "meals",
+  "ingredients": [
+    {
+      "item": "endersdelight:amberveil"
+    },
+    {
+      "item": "endersdelight:ethereal_saffron"
+    },
+    {
+      "item": "minecraft:chorus_flower"
+    }
+  ],
+  "result": {
+    "id": "endersdelight:veil_of_flames_risotto"
+  },
+  "container": {
+    "count": 1,
+    "id": "endersdelight:shulker_bowl"
+  },
+  "experience": 1.0,
+  "cookingtime": 200
+}

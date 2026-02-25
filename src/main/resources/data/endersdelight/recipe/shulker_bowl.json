@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "minecraft:shulker_shell"
+    }
+  ],
+  "result": {
+    "id": "endersdelight:shulker_bowl",
+    "count": 8
+  }
+}
