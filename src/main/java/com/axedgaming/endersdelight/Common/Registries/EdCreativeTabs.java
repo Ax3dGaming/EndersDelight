@@ -15,7 +15,7 @@ public class EdCreativeTabs {
     public static final DeferredHolder<CreativeModeTab, CreativeModeTab> ENDERS_DELIGHT_TAB = ED_CREATIVE_MODE_TABS.register("enders_delight_tab", () -> CreativeModeTab.builder()
             .title(Component.translatable("itemGroup.endersdelight"))
             .withTabsBefore(CreativeModeTabs.SPAWN_EGGS)
-            .icon(() -> EdItems.CHORUS_CRATE.asItem().getDefaultInstance())
+            .icon(() -> EdItems.ENDSTONE_STOVE.asItem().getDefaultInstance())
             .displayItems(((itemDisplayParameters, output) -> {
                 /* ~~ Block Items ~~ */
                 output.accept(EdItems.CHORUS_CRATE.asItem());
@@ -37,6 +37,7 @@ public class EdCreativeTabs {
                 output.accept(EdItems.UNCANNY_COOKIES.asItem());
                 output.accept(EdItems.CHORUS_JUICE.asItem());
                 output.accept(EdItems.STRANGE_ECLAIR.asItem());
+                output.accept(EdItems.CHORUS_PIE.asItem());
                 output.accept(EdItems.CHORUS_PIE_SLICE.asItem());
                 output.accept(EdItems.CHORUS_STEW.asItem());
                 output.accept(EdItems.CRISPY_SKEWER.asItem());

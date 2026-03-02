@@ -7,10 +7,12 @@ import com.axedgaming.endersdelight.Common.Blocks.EndstoneStoveBlock;
 import com.axedgaming.endersdelight.Common.Blocks.Bush.VoidPepperBush;
 import com.axedgaming.endersdelight.EndersDelight;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.neoforged.neoforge.registries.DeferredBlock;
 import net.neoforged.neoforge.registries.DeferredRegister;
 import vectorwing.farmersdelight.common.block.FeastBlock;
+import vectorwing.farmersdelight.common.block.PieBlock;
 
 import static vectorwing.farmersdelight.common.registry.ModBlocks.*;
 import static net.minecraft.world.level.block.Blocks.*;
@@ -38,4 +40,7 @@ public class EdBlocks {
 
     public static final DeferredBlock<Block> ETHEREAL_SAFFRON_BUSH = BLOCKS.register("ethereal_saffron_bush",
             () -> new EtherealSaffronBush(BlockBehaviour.Properties.ofFullCopy(SWEET_BERRY_BUSH)));
+
+    public static final DeferredBlock<Block> CHORUS_PIE= BLOCKS.register("chorus_pie",
+            () -> new PieBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.CAKE), EdItems.CHORUS_PIE_SLICE));
 }

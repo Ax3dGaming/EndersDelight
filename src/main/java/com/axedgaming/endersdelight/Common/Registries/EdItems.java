@@ -1,14 +1,19 @@
 package com.axedgaming.endersdelight.Common.Registries;
 
+import com.axedgaming.endersdelight.Common.Items.TooltipItem;
 import com.axedgaming.endersdelight.EndersDelight;
+import net.minecraft.network.chat.Component;
 import net.minecraft.world.food.FoodProperties;
-import net.minecraft.world.food.Foods;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.TooltipFlag;
 import net.neoforged.neoforge.registries.DeferredItem;
 import net.neoforged.neoforge.registries.DeferredRegister;
 import vectorwing.farmersdelight.common.FoodValues;
 import vectorwing.farmersdelight.common.item.ConsumableItem;
+
+import java.util.List;
 
 public class EdItems {
     public static final DeferredRegister.Items ITEMS = DeferredRegister.createItems(EndersDelight.MOD_ID);
@@ -42,6 +47,9 @@ public class EdItems {
     public static final DeferredItem<Item> VOIDPEPPER = ITEMS.register("voidpepper",
             () -> new BlockItem(EdBlocks.VOID_PEPPER_BUSH.get(), new Item.Properties()));
 
+    public static final DeferredItem<Item> CHORUS_PIE = ITEMS.register("chorus_pie",
+            () -> new BlockItem(EdBlocks.CHORUS_PIE.get(), new Item.Properties()));
+
 
     /* ~~ Items ~~ */
 
@@ -49,19 +57,19 @@ public class EdItems {
             () -> new Item(new Item.Properties().stacksTo(16)));
 
     public static final DeferredItem<Item> MITE_CRUST = ITEMS.register("mite_crust",
-            () -> new Item(new Item.Properties().food(EdFoods.DIET)));
+            () -> new TooltipItem(new Item.Properties().food(EdFoods.DIET), "tooltip.endersdelight.mite_crust"));
 
     public static final DeferredItem<Item> ENDER_SHARD = ITEMS.register("ender_shard",
             () -> new Item(new Item.Properties()));
 
     public static final DeferredItem<Item> ENDERMAN_SIGHT = ITEMS.register("enderman_sight",
-            () -> new Item(new Item.Properties()));
+            () -> new TooltipItem(new Item.Properties(), "tooltip.endersdelight.enderman_sight"));
 
     public static final DeferredItem<Item> SIGHT_FRAGMENTS =  ITEMS.register("sight_fragments",
             () -> new Item(new Item.Properties()));
 
     public static final DeferredItem<Item> SHULKER_MOLLUSK = ITEMS.register("shulker_mollusk",
-            () -> new Item(new Item.Properties().food(EdFoods.DIET)));
+            () -> new TooltipItem(new Item.Properties().food(EdFoods.DIET), "tooltip.endersdelight.shulker_mollusk"));
 
     public static final DeferredItem<Item> SHULKER_FILET = ITEMS.register("shulker_filet",
             () -> new Item(new Item.Properties().food(EdFoods.DIET)));
