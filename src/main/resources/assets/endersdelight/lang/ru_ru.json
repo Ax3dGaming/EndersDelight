@@ -3,7 +3,7 @@
   "block.endersdelight.chorus_pie": "Хорусовый пирог",
   "block.endersdelight.endstone_stove": "Эндерняковая кухонная плита",
   "block.endersdelight.stuffed_shulker_block": "Фаршированный шалкер",
-  "death.attack.was_watered": "%1$s был намочен",
+  "death.attack.endersdelight.watered": "%1$s был намочен",
   "effect.endersdelight.phasing": "Эндер-бремя",
   "effect.endersdelight.phasing.description": "Имитирует эндермена. Вода наносит урон и телепортирует в какое-либо место поблизости после получения любого урона.",
   "endersdelight.block.stuffed_shulker.use_shulker_bowl": "Вам нужна миска, для того, чтобы съесть это",

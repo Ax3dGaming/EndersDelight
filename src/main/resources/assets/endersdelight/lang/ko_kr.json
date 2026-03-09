@@ -3,7 +3,7 @@
   "block.endersdelight.chorus_pie": "후렴과 파이",
   "block.endersdelight.endstone_stove": "엔드 돌 난로",
   "block.endersdelight.stuffed_shulker_block": "속 채운 셜커",
-  "death.attack.was_watered": "%1$s 는 물에 닿아 피부가 녹아내렸습니다.",
+  "death.attack.endersdelight.watered": "%1$s 는 물에 닿아 피부가 녹아내렸습니다.",
   "effect.endersdelight.phasing": "엔더화",
   "endersdelight.block.stuffed_shulker.use_shulker_bowl": "이 음식을 먹으려면 셜커 그릇이 필요합니다",
   "item.endersdelight.chorus_juice": "후렴과 주스",

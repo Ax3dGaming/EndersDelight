@@ -3,7 +3,7 @@
   "block.endersdelight.chorus_pie": "Хорусовий пиріг",
   "block.endersdelight.endstone_stove": "Груба з каменю Енду",
   "block.endersdelight.stuffed_shulker_block": "Фарширований шалкер",
-  "death.attack.was_watered": "%1$s було полито",
+  "death.attack.endersdelight.watered": "%1$s було полито",
   "effect.endersdelight.phasing": "Переміщення ендермена",
   "endersdelight.block.stuffed_shulker.use_shulker_bowl": "Вам потрібна миска, щоб з'їсти це",
   "item.endersdelight.chorus_juice": "Хорусовий сік",

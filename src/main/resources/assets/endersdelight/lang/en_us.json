@@ -3,7 +3,7 @@
   "block.endersdelight.chorus_pie": "Chorus Pie",
   "block.endersdelight.endstone_stove": "Endstone Stove",
   "block.endersdelight.stuffed_shulker_block": "Stuffed Shulker",
-  "death.attack.was_watered": "%1$s was watered to death",
+  "death.attack.endersdelight.watered": "%1$s was watered to death",
   "death.attack.endersdelight.watered.player": "%1$s was watered to death by %2$s",
   "effect.endersdelight.phasing": "Ender Phasing",
   "effect.endersdelight.phasing.description": "Imitates Endermen. Water does damage and teleports to someplace nearby after taking any damage.",

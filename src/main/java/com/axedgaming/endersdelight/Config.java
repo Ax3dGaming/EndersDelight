@@ -65,7 +65,7 @@ public class Config {
         BUILDER.push("void_pepper");
 
         VOID_PEPPER_SPREAD_RADIUS = BUILDER
-                .comment("Max Manhattan radius for void pepper spreading attempts.")
+                .comment("Max radius for void pepper spreading attempts.")
                 .defineInRange("spreadRadius", 7, 1, 32);
 
         VOID_PEPPER_SPREAD_ATTEMPTS = BUILDER

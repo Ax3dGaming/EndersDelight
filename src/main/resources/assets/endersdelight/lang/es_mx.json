@@ -3,7 +3,7 @@
   "block.endersdelight.chorus_pie": "Pastel de Coro",
   "block.endersdelight.endstone_stove": "Estufa de Piedra del End",
   "block.endersdelight.stuffed_shulker_block": "Bloque de Shulker Relleno",
-  "death.attack.watered": "%1$s se baño",
+  "death.attack.endersdelight.watered": "%1$s se baño",
   "effect.endersdelight.phasing": "Faseo de Ender",
   "endersdelight.block.stuffed_shulker.use_shulker_bowl": "Necesitas un tazón para comer esto",
   "item.endersdelight.chorus_juice": "Jugo de Coro",
