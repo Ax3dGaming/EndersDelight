@@ -11,7 +11,7 @@
       "item": "minecraft:popped_chorus_fruit"
     },
     {
-      "item": "farmersdelight:milk_bottle"
+      "tag": "c:drinks/milk"
     },
     {
       "item": "endersdelight:shulker_bowl"

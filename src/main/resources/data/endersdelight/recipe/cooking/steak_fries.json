@@ -9,7 +9,7 @@
       "item": "minecraft:beef"
     },
     {
-      "item": "farmersdelight:milk_bottle"
+      "tag": "c:drinks/milk"
     },
     {
       "item": "minecraft:potato"

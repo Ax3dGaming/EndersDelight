@@ -45,172 +45,53 @@ import vectorwing.farmersdelight.common.registry.ModDamageTypes;
 import vectorwing.farmersdelight.common.registry.ModSounds;
 import vectorwing.farmersdelight.common.utility.ItemUtils;
 import vectorwing.farmersdelight.common.utility.MathUtils;
+import vectorwing.farmersdelight.common.block.AbstractStoveBlock;
+import vectorwing.farmersdelight.common.block.StoveBlock;
+import vectorwing.farmersdelight.common.block.entity.StoveBlockEntity;
 
 import javax.annotation.Nullable;
 import java.util.Optional;
 
-public class EndstoneStoveBlock extends BaseEntityBlock {
-    public static final MapCodec<EndstoneStoveBlock> CODEC = simpleCodec(EndstoneStoveBlock::new);
-    public static final BooleanProperty LIT;
-    public static final DirectionProperty FACING;
+public class EndstoneStoveBlock extends AbstractStoveBlock
+{
+	public static final MapCodec<EndstoneStoveBlock> CODEC = simpleCodec(EndstoneStoveBlock::new);
 
-    public EndstoneStoveBlock(BlockBehaviour.Properties properties) {
-        super(properties);
-        this.registerDefaultState((BlockState)((BlockState)((BlockState)this.stateDefinition.any()).setValue(FACING, Direction.NORTH)).setValue(LIT, false));
-    }
-
-    protected MapCodec<? extends BaseEntityBlock> codec() {
+	@Override
+	public MapCodec<EndstoneStoveBlock> codec() {
         return CODEC;
     }
 
-    protected ItemInteractionResult useItemOn(ItemStack heldStack, BlockState state, Level level, BlockPos pos, Player player, InteractionHand hand, BlockHitResult hit) {
-        Item heldItem = heldStack.getItem();
-        if ((Boolean)state.getValue(LIT)) {
-            if (heldStack.canPerformAction(ItemAbilities.SHOVEL_DIG)) {
-                this.extinguish(state, level, pos);
-                heldStack.hurtAndBreak(1, player, LivingEntity.getSlotForHand(hand));
-                return ItemInteractionResult.SUCCESS;
-            }
+	public EndstoneStoveBlock(BlockBehaviour.Properties properties) {
+		super(properties);
+	}
 
-            if (heldStack.is(Tags.Items.BUCKETS_WATER)) {
-                if (!level.isClientSide()) {
-                    level.playSound((Player)null, pos, SoundEvents.GENERIC_EXTINGUISH_FIRE, SoundSource.BLOCKS, 1.0F, 1.0F);
-                }
+	public BlockEntity newBlockEntity(BlockPos pos, BlockState state) {
+		return new EndstoneStoveBlockEntity(pos, state);
+	}
 
-                this.extinguish(state, level, pos);
-                if (!player.isCreative()) {
-                    player.setItemInHand(hand, heldStack.getCraftingRemainingItem());
-                }
+	@Nullable
+	public <T extends BlockEntity> BlockEntityTicker<T> getTicker(Level level, BlockState state, BlockEntityType<T> blockEntityType) {
+		if (level.isClientSide && state.getValue(LIT)) return createTickerHelper(blockEntityType, EdBlockEntityTypes.ENDSTONE_STOVE.get(), EndstoneStoveBlockEntity::particleTick);
+		return createStoveTicker(level, blockEntityType, EdBlockEntityTypes.ENDSTONE_STOVE.get());
+	}
 
-                return ItemInteractionResult.SUCCESS;
-            }
-        } else {
-            if (heldItem instanceof FlintAndSteelItem) {
-                level.playSound(player, pos, SoundEvents.FLINTANDSTEEL_USE, SoundSource.BLOCKS, 1.0F, MathUtils.RAND.nextFloat() * 0.4F + 0.8F);
-                level.setBlock(pos, (BlockState)state.setValue(BlockStateProperties.LIT, Boolean.TRUE), 11);
-                heldStack.hurtAndBreak(1, player, LivingEntity.getSlotForHand(hand));
-                return ItemInteractionResult.SUCCESS;
-            }
+	@Override
+	public void animateTick(BlockState state, Level level, BlockPos pos, RandomSource random) {
+		if (!state.getValue(LIT)) return;
+		double x = (double) pos.getX() + 0.5D;
+		double y = pos.getY();
+		double z = (double) pos.getZ() + 0.5D;
+		if (random.nextInt(10) == 0) {
+			level.playLocalSound(x, y, z, ModSounds.BLOCK_STOVE_CRACKLE.get(), SoundSource.BLOCKS, 1.0F, 1.0F, false);
+		}
 
-            if (heldItem instanceof FireChargeItem) {
-                level.playSound((Player)null, pos, SoundEvents.FIRECHARGE_USE, SoundSource.BLOCKS, 1.0F, (MathUtils.RAND.nextFloat() - MathUtils.RAND.nextFloat()) * 0.2F + 1.0F);
-                level.setBlock(pos, (BlockState)state.setValue(BlockStateProperties.LIT, Boolean.TRUE), 11);
-                if (!player.isCreative()) {
-                    heldStack.shrink(1);
-                }
-
-                return ItemInteractionResult.SUCCESS;
-            }
-        }
-
-        BlockEntity tileEntity = level.getBlockEntity(pos);
-        if (tileEntity instanceof EndstoneStoveBlockEntity stoveEntity) {
-            int stoveSlot = stoveEntity.getNextEmptySlot();
-            if (stoveSlot < 0 || stoveEntity.isStoveBlockedAbove()) {
-                return ItemInteractionResult.PASS_TO_DEFAULT_BLOCK_INTERACTION;
-            }
-
-            Optional<RecipeHolder<CampfireCookingRecipe>> recipe = stoveEntity.getMatchingRecipe(heldStack);
-            if (recipe.isPresent()) {
-                if (!level.isClientSide && stoveEntity.addItem(player.getAbilities().instabuild ? heldStack.copy() : heldStack, (RecipeHolder)recipe.get(), stoveSlot)) {
-                    return ItemInteractionResult.SUCCESS;
-                }
-
-                return ItemInteractionResult.CONSUME;
-            }
-        }
-
-        return ItemInteractionResult.PASS_TO_DEFAULT_BLOCK_INTERACTION;
-    }
-
-    public RenderShape getRenderShape(BlockState pState) {
-        return RenderShape.MODEL;
-    }
-
-    public void extinguish(BlockState state, Level level, BlockPos pos) {
-        level.setBlock(pos, (BlockState)state.setValue(LIT, false), 2);
-        double x = (double)pos.getX() + (double)0.5F;
-        double y = (double)pos.getY();
-        double z = (double)pos.getZ() + (double)0.5F;
-        level.playLocalSound(x, y, z, SoundEvents.FIRE_EXTINGUISH, SoundSource.BLOCKS, 0.5F, 2.6F, false);
-    }
-
-    public BlockState getStateForPlacement(BlockPlaceContext context) {
-        return (BlockState)((BlockState)this.defaultBlockState().setValue(FACING, context.getHorizontalDirection().getOpposite())).setValue(LIT, true);
-    }
-
-    public void stepOn(Level level, BlockPos pos, BlockState state, Entity entity) {
-        boolean isLit = (Boolean)level.getBlockState(pos).getValue(LIT);
-        if (isLit && !entity.isSteppingCarefully() && entity instanceof LivingEntity) {
-            entity.hurt(ModDamageTypes.getSimpleDamageSource(level, ModDamageTypes.STOVE_BURN), 1.0F);
-        }
-
-        super.stepOn(level, pos, state, entity);
-    }
-
-    public void onRemove(BlockState state, Level level, BlockPos pos, BlockState newState, boolean isMoving) {
-        if (state.getBlock() != newState.getBlock()) {
-            BlockEntity tileEntity = level.getBlockEntity(pos);
-            if (tileEntity instanceof EndstoneStoveBlockEntity) {
-                ItemUtils.dropItems(level, pos, ((EndstoneStoveBlockEntity)tileEntity).getInventory());
-            }
-
-            super.onRemove(state, level, pos, newState, isMoving);
-        }
-
-    }
-
-    protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> builder) {
-        super.createBlockStateDefinition(builder);
-        builder.add(new Property[]{LIT, FACING});
-    }
-
-    public void animateTick(BlockState stateIn, Level level, BlockPos pos, RandomSource rand) {
-        if ((Boolean)stateIn.getValue(CampfireBlock.LIT)) {
-            double x = (double)pos.getX() + (double)0.5F;
-            double y = (double)pos.getY();
-            double z = (double)pos.getZ() + (double)0.5F;
-            if (rand.nextInt(10) == 0) {
-                level.playLocalSound(x, y, z, (SoundEvent)ModSounds.BLOCK_STOVE_CRACKLE.get(), SoundSource.BLOCKS, 1.0F, 1.0F, false);
-            }
-
-            Direction direction = (Direction)stateIn.getValue(HorizontalDirectionalBlock.FACING);
-            Direction.Axis direction$axis = direction.getAxis();
-            double horizontalOffset = rand.nextDouble() * 0.6 - 0.3;
-            double xOffset = direction$axis == Direction.Axis.X ? (double)direction.getStepX() * 0.52 : horizontalOffset;
-            double yOffset = rand.nextDouble() * (double)6.0F / (double)16.0F;
-            double zOffset = direction$axis == Direction.Axis.Z ? (double)direction.getStepZ() * 0.52 : horizontalOffset;
-            level.addParticle(ParticleTypes.SMOKE, x + xOffset, y + yOffset, z + zOffset, (double)0.0F, (double)0.0F, (double)0.0F);
-            level.addParticle(EdParticles.END_FLAME.get(), x + xOffset, y + yOffset, z + zOffset, (double)0.0F, (double)0.0F, (double)0.0F);
-        }
-
-    }
-
-    @Nullable
-    public BlockEntity newBlockEntity(BlockPos pos, BlockState state) {
-        return ((BlockEntityType)EdBlockEntityTypes.ENDSTONE_STOVE.get()).create(pos, state);
-    }
-
-    @Nullable
-    public <T extends BlockEntity> BlockEntityTicker<T> getTicker(Level level, BlockState state, BlockEntityType<T> blockEntityType) {
-        return (Boolean)state.getValue(LIT) ? createTickerHelper(blockEntityType, (BlockEntityType)EdBlockEntityTypes.ENDSTONE_STOVE.get(), level.isClientSide ? EndstoneStoveBlockEntity::animationTick : EndstoneStoveBlockEntity::cookingTick) : null;
-    }
-
-    @Nullable
-    public PathType getBlockPathType(BlockState state, BlockGetter world, BlockPos pos, @Nullable Mob entity) {
-        return (Boolean)state.getValue(LIT) ? PathType.DAMAGE_FIRE : null;
-    }
-
-    public BlockState rotate(BlockState pState, Rotation pRot) {
-        return (BlockState)pState.setValue(FACING, pRot.rotate((Direction)pState.getValue(FACING)));
-    }
-
-    public BlockState mirror(BlockState pState, Mirror pMirror) {
-        return pState.rotate(pMirror.getRotation((Direction)pState.getValue(FACING)));
-    }
-
-    static {
-        LIT = BlockStateProperties.LIT;
-        FACING = BlockStateProperties.HORIZONTAL_FACING;
-    }
+		Direction direction = state.getValue(HorizontalDirectionalBlock.FACING);
+		Direction.Axis direction$axis = direction.getAxis();
+		double horizontalOffset = random.nextDouble() * 0.6D - 0.3D;
+		double xOffset = direction$axis == Direction.Axis.X ? (double) direction.getStepX() * 0.52D : horizontalOffset;
+		double yOffset = random.nextDouble() * 6.0D / 16.0D;
+		double zOffset = direction$axis == Direction.Axis.Z ? (double) direction.getStepZ() * 0.52D : horizontalOffset;
+		level.addParticle(ParticleTypes.SMOKE, x + xOffset, y + yOffset, z + zOffset, 0.0D, 0.0D, 0.0D);
+		level.addParticle(ParticleTypes.FLAME, x + xOffset, y + yOffset, z + zOffset, 0.0D, 0.0D, 0.0D);
+	}
 }
