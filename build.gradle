@@ -3,6 +3,7 @@ plugins {
     id 'maven-publish'
     id 'net.neoforged.moddev' version '2.0.140'
     id 'idea'
+    id 'org.sonarqube' version '6.0.1.5171'
 }
 
 tasks.named('wrapper', Wrapper).configure {
@@ -156,5 +157,13 @@ idea {
     module {
         downloadSources = true
         downloadJavadoc = true
+    }
+}
+
+sonar {
+    properties {
+        property "sonar.projectKey", "ax3dgaming_endersdelight"
+        property "sonar.organization", "ax3dgaming"
+        property "sonar.host.url", "https://sonarcloud.io"
     }
 }
