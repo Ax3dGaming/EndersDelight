@@ -45,14 +45,20 @@ jobs:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
         run: ./gradlew sonar --no-daemon
 
-      - name: Send jar to Discord
+      - name: Send dev jar to Discord
         if: github.ref == 'refs/heads/main'
         env:
           DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
         run: |
+          VERSION=$(grep "^mod_version=" gradle.properties | cut -d= -f2)
+          MC_VERSION=$(grep "^minecraft_version=" gradle.properties | cut -d= -f2)
+
           JAR_FILE=$(find build/libs -name "*.jar" ! -name "*sources*" ! -name "*javadoc*" | head -n 1)
+          DEV_JAR="endersdelight-dev-neoforge-${MC_VERSION}-${VERSION}.jar"
+
+          cp "$JAR_FILE" "$DEV_JAR"
 
           curl \
-            -F "payload_json={\"content\":\"New **Ender's Delight** build available in **main** branch\"}" \
-            -F "file=@${JAR_FILE}" \
+            -F "payload_json={\"content\":\"New *Ender's Delight* **dev build** available\"}" \
+            -F "file=@${DEV_JAR}" \
             "$DISCORD_WEBHOOK_URL"
