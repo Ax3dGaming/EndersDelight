@@ -1,0 +1,26 @@
+{
+  "type": "farmersdelight:cooking",
+  "recipe_book_tab": "meals",
+  "ingredients": [
+    {
+      "item": "endersdelight:crushed_voidpepper"
+    },
+    {
+      "item": "minecraft:beef"
+    },
+    {
+      "item": "farmersdelight:milk_bottle"
+    },
+    {
+      "item": "minecraft:potato"
+    }
+  ],
+  "result": {
+    "item": "endersdelight:steak_fries"
+  },
+  "container": {
+    "item": "endersdelight:shulker_bowl"
+  },
+  "experience": 1.0,
+  "cookingtime": 200
+}

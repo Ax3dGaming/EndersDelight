@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "ooo",
+    "ede",
+    "ese"
+  ],
+  "key": {
+    "o": {
+      "item": "minecraft:obsidian"
+    },
+    "e": {
+      "item": "minecraft:end_stone_bricks"
+    },
+    "s": {
+      "item": "minecraft:campfire"
+    },
+    "d": {
+      "item": "minecraft:dragon_breath"
+    }
+  },
+  "result": {
+    "item": "endersdelight:endstone_stove"
+  }
+}

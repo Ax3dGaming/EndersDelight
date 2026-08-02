@@ -1,0 +1,19 @@
+{
+  "type": "create:milling",
+  "ingredients": [
+    {
+      "item": "endersdelight:voidpepper"
+    }
+  ],
+  "processingTime": 70,
+  "results": [
+    {
+      "count": 2,
+      "item": "endersdelight:crushed_voidpepper"
+    },
+    {
+      "chance": 0.3,
+      "item": "endersdelight:crushed_voidpepper"
+    }
+  ]
+}
