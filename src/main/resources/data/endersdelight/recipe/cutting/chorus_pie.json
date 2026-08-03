@@ -5,6 +5,9 @@
       "item": "endersdelight:chorus_pie"
     }
   ],
+  "tool": {
+    "tag": "c:tools/knife"
+  },
   "result": [
     {
       "item": {
@@ -12,8 +15,5 @@
         "id": "endersdelight:chorus_pie_slice"
       }
     }
-  ],
-  "tool": {
-    "tag": "c:tools/knife"
-  }
+  ]
 }

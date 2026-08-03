@@ -10,6 +10,7 @@ import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.neoforged.neoforge.registries.DeferredBlock;
+import net.minecraft.world.level.block.SoundType;
 import net.neoforged.neoforge.registries.DeferredRegister;
 import vectorwing.farmersdelight.common.block.FeastBlock;
 import vectorwing.farmersdelight.common.block.PieBlock;
@@ -21,13 +22,13 @@ public class EdBlocks {
     public static final DeferredRegister.Blocks BLOCKS = DeferredRegister.createBlocks(EndersDelight.MOD_ID);
 
     public static final DeferredBlock<Block> CHORUS_CRATE = BLOCKS.register("chorus_crate",
-            () -> new Block(BlockBehaviour.Properties.ofFullCopy(CABBAGE_CRATE.get())));
+            () -> new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_PLANKS).strength(2.0F, 3.0F).sound(SoundType.WOOD)));
 
     public static final DeferredBlock<Block> ENDSTONE_STOVE = BLOCKS.register("endstone_stove",
-            () -> new EndstoneStoveBlock(BlockBehaviour.Properties.ofFullCopy(STOVE.get())));
+            () -> new EndstoneStoveBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.BRICKS).lightLevel((state) -> state.getValue(EndstoneStoveBlock.LIT) ? 13 : 0)));
 
     public static final DeferredBlock<Block> STUFFED_SHULKER = BLOCKS.register("stuffed_shulker",
-            () -> new FeastBlock(BlockBehaviour.Properties.ofFullCopy(STUFFED_PUMPKIN_BLOCK.get()),EdItems.STUFFED_SHULKER_BOWL,false));
+            () -> new FeastBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.CAKE),EdItems.STUFFED_SHULKER_BOWL,false));
 
     public static final DeferredBlock<Block> VOID_PEPPER_BUSH = BLOCKS.register("voidpepper_bush",
             () -> new VoidPepperBush(BlockBehaviour.Properties.ofFullCopy(SWEET_BERRY_BUSH)));
